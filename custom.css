@@ -46,9 +46,9 @@ body {
 
 .quote {
   position: absolute;
-  top: 180px;
+  top: 45%;
   left: 104px;
-  background: rgba(6, 45, 154, 0.4);
+  background: rgba(6, 45, 154, 0.1);
   font: 17px sans-serif;
   color: #fff;
   text-align: center;
