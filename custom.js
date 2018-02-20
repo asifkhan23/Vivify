@@ -10,7 +10,7 @@ var beautifulNewTab = (function beautifulNewTab() {
     "X-Mashape-Key": "NNVo5yZIATmshv1o0uqFsTVTSsObp1s54gKjsnIfXvjJrwxWxe"
   });
   var init = {
-    method : 'GET',
+    method: 'GET',
     headers: myHeaders
   }
 
@@ -55,7 +55,7 @@ var beautifulNewTab = (function beautifulNewTab() {
     })
 
   //fetch quote
-  fetch(QUOTES_API,init)
+  fetch(QUOTES_API, init)
     .then(function(response) {
       return response.json();
     })
