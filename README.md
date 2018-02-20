@@ -12,3 +12,6 @@ Google chrome extension | transforms your new tabs to an inspiring beautiful pla
 > 5. Make sure the enabled checkbox is checked.
 
  Open a new tab and enjoy the beauty!  :+1: 
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/23imak/Astronomy-Picture-of-the-Day/blob/master/LICENSE) file for details
