@@ -1,7 +1,7 @@
 var beautifulNewTab = (function beautifulNewTab() {
 
   var QUOTES_API = "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
-  var IMAGE_API = "https://api.nasa.gov/planetary/apod?api_key=U1FBlDl0BCK0NL5MGNQANPy8PJJL5Z5p509k7vV1&count=4";
+  var IMAGE_API = "https://api.nasa.gov/planetary/apod?api_key=U1FBlDl0BCK0NL5MGNQANPy8PJJL5Z5p509k7vV1&count=1";
 
   var monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
@@ -38,9 +38,9 @@ var beautifulNewTab = (function beautifulNewTab() {
     })
     .then(function(resp) {
       var imageElem = document.querySelector('.contentContainer');
-      imageElem.innerHTML = "<div style=background-image:url(" + resp[3].url + ")></div>";
+      imageElem.innerHTML = "<div style=background-image:url(" + resp[0].url + ")></div>";
       var imgTitle = document.querySelector('.img-title');
-      imgTitle.innerHTML = "<p>" + resp[3].title + "</p>";
+      imgTitle.innerHTML = "<p>" + resp[0].title + "</p>";
     })
 
   //fetch quote
