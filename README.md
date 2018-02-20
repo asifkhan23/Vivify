@@ -10,5 +10,4 @@ Google chrome extension | transforms your new tabs to an inspiring beautiful pla
 > 3. Click on  **Load unpacked extension..**
 > 4. Select the root folder named **Astronomy-Picture-of-the-Day**.
 
-## Enjoy!
-
+ Enjoy!  :+1: 
