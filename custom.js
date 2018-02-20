@@ -1,4 +1,8 @@
 var beautifulNewTab = (function beautifulNewTab() {
+
+  var QUOTES_API = "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
+  var IMAGE_API = "https://api.nasa.gov/planetary/apod?api_key=U1FBlDl0BCK0NL5MGNQANPy8PJJL5Z5p509k7vV1&count=4";
+
   var monthNames = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
   ];
@@ -28,7 +32,7 @@ var beautifulNewTab = (function beautifulNewTab() {
 
 
   //fetch image
-  fetch('https://api.nasa.gov/planetary/apod?api_key=U1FBlDl0BCK0NL5MGNQANPy8PJJL5Z5p509k7vV1&count=4')
+  fetch(IMAGE_API)
     .then(function(response) {
       return response.json();
     })
@@ -40,12 +44,12 @@ var beautifulNewTab = (function beautifulNewTab() {
     })
 
   //fetch quote
-  fetch('https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en')
+  fetch(QUOTES_API)
     .then(function(response) {
       return response.json();
     })
     .then(function(resp) {
       var quoteElm = document.querySelector('.quote');
-      quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quoteText + "<span class='rightQuote'></span></p>";
+      quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quoteText + "</p> <span class='rightQuote'></span><br> - " + resp.quoteAuthor;
     })
 })();
