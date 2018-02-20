@@ -46,9 +46,9 @@ body {
 
 .quote {
   position: absolute;
-  top: 40%;
-  left: 104px;
-  background: rgba(6, 45, 154, 0.3);
+  top: 80%;
+  left: 28%;
+  /* background: rgba(6, 45, 154, 0.3); */
   font: 17px sans-serif;
   color: #fff;
   text-align: center;
@@ -77,4 +77,15 @@ body {
 
 .quote p {
   display: inline-block;
+}
+
+.time {
+  position: absolute;
+  top: 20%;
+  left: 32%;
+  font: 120px sans-serif;
+  color: #fff;
+  text-align: center;
+  padding: 20px 41px;
+  letter-spacing: 3px;
 }
