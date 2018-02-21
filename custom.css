@@ -16,7 +16,7 @@ body {
   padding: 55px 12px; */
 }
 
-.contentContainer div {
+.contentContainer {
   width: 100%;
   background-size: cover;
   height: 100vh
@@ -45,14 +45,13 @@ body {
 }
 
 .quote {
-  position: absolute;
-  top: 80%;
-  left: 28%;
-  /* background: rgba(6, 45, 154, 0.3); */
+  position: relative;
+  top: 79%;
   font: 17px sans-serif;
   color: #fff;
   text-align: center;
   padding: 20px 41px;
+  bottom: 0;
 }
 
 .leftQuote {

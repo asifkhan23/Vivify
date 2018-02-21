@@ -49,7 +49,7 @@ var beautifulNewTab = (function beautifulNewTab() {
     })
     .then(function(resp) {
       var imageElem = document.querySelector('.contentContainer');
-      imageElem.innerHTML = "<div style=background-image:url(" + resp[0].url + ")></div>";
+      imageElem.style.backgroundImage = "url(" + resp[0].url + ")";
       var imgTitle = document.querySelector('.img-title');
       imgTitle.innerHTML = "<p>" + resp[0].title + "</p>";
     })
