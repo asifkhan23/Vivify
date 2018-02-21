@@ -102,8 +102,56 @@ body {
 
 }
 .news a {
-
   font: 10px 'Roboto', sans-serif;
   color: #fff;
   text-decoration: none;
+}
+
+ul.social-icons{
+  float: right;
+  list-style: none;
+  width: 20px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  z-index: 99999;
+
+}
+ul.social-icons li{
+  float:left;
+  margin: 10px 0 0 0;
+  height:20px;
+  width:20px;
+}
+ul.social-icons li a{
+  float:left;
+  height:20px;
+  width:20px;
+}
+
+ul.social-icons li.youtube{
+  background: url(images/youtube.svg);
+  background-size: 20px 20px;
+}
+
+ul.social-icons li.facebook{
+  background: url(images/facebook.svg);
+  background-size: 20px 20px;
+}
+
+ul.social-icons li.twitter  {
+  background: url(images/twitter.svg);
+  background-size: 20px 20px;
+}
+ul.social-icons li.gmail  {
+  background: url(images/gmail.svg);
+  background-size: 20px 20px;
+}
+ul.social-icons li.gplus  {
+  background: url(images/google-plus.svg);
+  background-size: 20px 20px;
+}
+ul.social-icons li.linkedin  {
+  background: url(images/linkedin.svg);
+  background-size: 20px 20px;
 }
