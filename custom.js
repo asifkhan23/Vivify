@@ -5,6 +5,8 @@ var beautifulNewTab = (function beautifulNewTab() {
   //var IMAGE_API = "https://api.nasa.gov/planetary/apod?api_key=U1FBlDl0BCK0NL5MGNQANPy8PJJL5Z5p509k7vV1&count=1";
   var IMAGE_API = "https://source.unsplash.com/random";
 
+  var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
+
   var myHeaders = new Headers({
     "Content-Type": "application/x-www-form-urlencoded",
     "Accept": "application/json",
@@ -53,6 +55,17 @@ var beautifulNewTab = (function beautifulNewTab() {
       imageElem.style.backgroundImage = "url(" + resp.url + ")";
       // var imgTitle = document.querySelector('.img-title');
       // imgTitle.innerHTML = "<p>" + resp[0].title + "</p>";
+    })
+
+  // fetch News
+  var req = new Request(NEWS_API);
+  fetch(req)
+    .then(data => data.json())
+    .then(data => {
+      var newsElem = document.querySelector('.news');
+      for (news of data.articles) {
+        newsElem.innerHTML = newsElem.innerHTML + "<p><a style='text-decoration:none' href=" + news.url + ">" + news.title + "</a></p>";
+      }
     })
 
   //fetch quote
