@@ -63,8 +63,8 @@ var beautifulNewTab = (function beautifulNewTab() {
     .then(data => data.json())
     .then(data => {
       var newsElem = document.querySelector('.news');
-      for (news of data.articles) {
-        newsElem.innerHTML = newsElem.innerHTML + "<p><a style='text-decoration:none' href=" + news.url + ">" + news.title + "</a></p>";
+      for (var i=0; i<10; i++) {
+        newsElem.innerHTML = newsElem.innerHTML + "<li><a href=" + data.articles[i].url + ">" + data.articles[i].title + "</a></li>";
       }
     })
 
