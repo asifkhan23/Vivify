@@ -120,6 +120,11 @@ ul.social-icons li a{
   width:20px;
 }
 
+ul.social-icons li.youtube{
+  background: url(images/youtube.svg);
+  background-size: 20px 20px;
+}
+
 ul.social-icons li.facebook{
   background: url(images/facebook.svg);
   background-size: 20px 20px;
