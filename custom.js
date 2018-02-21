@@ -2,7 +2,8 @@ var beautifulNewTab = (function beautifulNewTab() {
 
   //var QUOTES_API = "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
   var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
-  var IMAGE_API = "https://api.nasa.gov/planetary/apod?api_key=U1FBlDl0BCK0NL5MGNQANPy8PJJL5Z5p509k7vV1&count=1";
+  //var IMAGE_API = "https://api.nasa.gov/planetary/apod?api_key=U1FBlDl0BCK0NL5MGNQANPy8PJJL5Z5p509k7vV1&count=1";
+  var IMAGE_API = "https://source.unsplash.com/random";
 
   var myHeaders = new Headers({
     "Content-Type": "application/x-www-form-urlencoded",
@@ -45,13 +46,13 @@ var beautifulNewTab = (function beautifulNewTab() {
   //fetch image
   fetch(IMAGE_API)
     .then(function(response) {
-      return response.json();
+      return response;
     })
     .then(function(resp) {
       var imageElem = document.querySelector('.contentContainer');
-      imageElem.style.backgroundImage = "url(" + resp[0].url + ")";
-      var imgTitle = document.querySelector('.img-title');
-      imgTitle.innerHTML = "<p>" + resp[0].title + "</p>";
+      imageElem.style.backgroundImage = "url(" + resp.url + ")";
+      // var imgTitle = document.querySelector('.img-title');
+      // imgTitle.innerHTML = "<p>" + resp[0].title + "</p>";
     })
 
   //fetch quote
