@@ -8,7 +8,7 @@ Google chrome extension | transforms your new tabs to an inspiring beautiful pla
 > 1. Clone or download this repository.
 > 2. Open chrome and go to extenions in settings.
 > 3. Click on  **Load unpacked extension..**
-> 4. Select the root folder named **Astronomy-Picture-of-the-Day**.
+> 4. Select the root folder named **Vivify**.
 > 5. Make sure the enabled checkbox is checked.
 
  Open a new tab and enjoy the beauty!  :+1: 
