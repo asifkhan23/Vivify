@@ -1,30 +1,34 @@
 <html>
-    <head>
-        <title>New Tab</title>
-        <link rel="stylesheet" href="custom.css">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    </head>
-    <body>
-      <div class="dateContainer">
-        <div class="date"></div>
-      </div>
-      <div class="time"></div>
-      <div class='contentContainer'>
-        <div class='quote'></div>
-        <div class="newsContainer">
-          <ul class="news"></ul>
-        </div>
-        <ul class="social-icons">
-          <li class='youtube'><a href ="https://www.youtube.com/" target="_blank"></a></li>
-          <li class='facebook'><a href ="https://www.facebook.com/" target="_blank"></a></li>
-          <li class='gmail'><a href ="https://gmail.com/" target="_blank"></a></li>
-          <li class='twitter'><a href ="https://twitter.com/" target="_blank"></a></li>
-          <li class='gplus'><a href ="https://plus.google.com/" target="_blank"></a></li>
-          <li class='linkedin'><a href ="https://linkedin.com/" target="_blank"></a></li>
-        </ul>
-      </div>
-      <!-- <div class="img-title"></div> -->
-      <!-- <script src="canvas.js"></script> -->
-      <script src="custom.js"></script>
-    </body>
+
+<head>
+  <title>New Tab</title>
+  <link rel="stylesheet" href="custom.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+
+<body>
+  <div class="dateContainer">
+    <div class="date"></div>
+  </div>
+  <div class="time"></div>
+  <div class='contentContainer'>
+    <div class='quote'></div>
+    <button class="button" id="showNews" style="vertical-align:middle"><span> News </span></button>
+    <button class="button" id="hideNews" style="vertical-align:middle"><span> News </span></button>
+    <div class="newsContainer" style="display:none;" id="newsContainer">
+      <ul class="news"></ul>
+    </div>
+    <ul class="social-icons">
+      <li class='youtube'><a href="https://www.youtube.com/" target="_blank"></a></li>
+      <li class='facebook'><a href="https://www.facebook.com/" target="_blank"></a></li>
+      <li class='gmail'><a href="https://gmail.com/" target="_blank"></a></li>
+      <li class='twitter'><a href="https://twitter.com/" target="_blank"></a></li>
+      <li class='gplus'><a href="https://plus.google.com/" target="_blank"></a></li>
+      <li class='linkedin'><a href="https://linkedin.com/" target="_blank"></a></li>
+    </ul>
+  </div>
+  <!-- <div class="img-title"></div> -->
+  <script src="custom.js"></script>
+</body>
+
 </html>

@@ -89,25 +89,25 @@ body {
   letter-spacing: 3px;
 }
 
-.newsContainer{
+.newsContainer {
   background: rgba(51, 51, 51, 0.5);
   display: inline-block;
 }
+
 .news {
   padding: 13px 24px;
   list-style-type: none;
 }
 
-.news li{
+.news li {}
 
-}
 .news a {
   font: 10px 'Roboto', sans-serif;
   color: #fff;
   text-decoration: none;
 }
 
-ul.social-icons{
+ul.social-icons {
   float: right;
   list-style: none;
   width: 20px;
@@ -115,43 +115,94 @@ ul.social-icons{
   right: 10px;
   bottom: 10px;
   z-index: 99999;
-
 }
-ul.social-icons li{
-  float:left;
+
+ul.social-icons li {
+  float: left;
   margin: 10px 0 0 0;
-  height:20px;
-  width:20px;
-}
-ul.social-icons li a{
-  float:left;
-  height:20px;
-  width:20px;
+  height: 20px;
+  width: 20px;
 }
 
-ul.social-icons li.youtube{
+ul.social-icons li a {
+  float: left;
+  height: 20px;
+  width: 20px;
+}
+
+ul.social-icons li.youtube {
   background: url(images/youtube.svg);
   background-size: 20px 20px;
 }
 
-ul.social-icons li.facebook{
+ul.social-icons li.facebook {
   background: url(images/facebook.svg);
   background-size: 20px 20px;
 }
 
-ul.social-icons li.twitter  {
+ul.social-icons li.twitter {
   background: url(images/twitter.svg);
   background-size: 20px 20px;
 }
-ul.social-icons li.gmail  {
+
+ul.social-icons li.gmail {
   background: url(images/gmail.svg);
   background-size: 20px 20px;
 }
-ul.social-icons li.gplus  {
+
+ul.social-icons li.gplus {
   background: url(images/google-plus.svg);
   background-size: 20px 20px;
 }
-ul.social-icons li.linkedin  {
+
+ul.social-icons li.linkedin {
   background: url(images/linkedin.svg);
   background-size: 20px 20px;
+}
+
+#hideNews {
+  display: none;
+}
+
+.button {
+  position: absolute;
+  display: inline-block;
+  border-radius: 4px;
+  /* background-color: #f4511e; */
+  background: rgba(51, 51, 51, 0.5);
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  /* padding: 20px; */
+  width: 90px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+  top: 0px
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
 }

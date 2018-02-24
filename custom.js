@@ -63,7 +63,7 @@ var beautifulNewTab = (function beautifulNewTab() {
     .then(data => data.json())
     .then(data => {
       var newsElem = document.querySelector('.news');
-      for (var i=0; i<10; i++) {
+      for (var i = 0; i < 10; i++) {
         newsElem.innerHTML = newsElem.innerHTML + "<li><a href=" + data.articles[i].url + ">" + data.articles[i].title + "</a></li>";
       }
     })
@@ -78,3 +78,19 @@ var beautifulNewTab = (function beautifulNewTab() {
       quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quote + "</p> <span class='rightQuote'></span><br> - " + resp.author;
     })
 })();
+
+document.getElementById("showNews").addEventListener("click", displayNews);
+
+function displayNews() {
+  document.getElementById('showNews').style.display = "none";
+  document.getElementById('hideNews').style.display = "block";
+  document.getElementById('newsContainer').style.display = "inline-block";
+}
+
+document.getElementById("hideNews").addEventListener("click", hideNews);
+
+function hideNews() {
+  document.getElementById('showNews').style.display = "block";
+  document.getElementById('hideNews').style.display = "none";
+  document.getElementById('newsContainer').style.display = "none";
+}
