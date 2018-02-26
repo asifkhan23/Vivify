@@ -167,7 +167,7 @@ ul.social-icons li.linkedin {
 .button {
   position: absolute;
   display: inline-block;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   /* background-color: #f4511e; */
   background: rgba(51, 51, 51, 0.5);
   border: none;
@@ -205,4 +205,71 @@ ul.social-icons li.linkedin {
 .button:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+/* text area css */
+
+textarea, button {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+form {
+  margin-top: 2.5em;
+  max-width: 30em;
+}
+
+label[for=comment] {
+  color: #339966;
+  display: block;
+  font-style: italic;
+  margin-bottom: 0.375em;
+}
+
+.zennable {
+  position: absolute;
+  width: 18%;
+  height: 100%;
+  right: 0px;
+}
+
+.zennable textarea {
+  background-color: #f6f6f6;
+  border: 0;
+  border-radius: 3px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  color: #333;
+  display: block;
+  font-size: 1em;
+  height: 10em;
+  line-height: 1.5em;
+  padding: 0.25em 0.5em;
+  width: 100%;
+  color: white;
+}
+
+.zennable textarea:focus {
+  background-color: rgba(51, 51, 51, 0.8);
+}
+
+.zen-backdrop textarea {
+  height: 100%;
+  font-size: 1.375em;
+  max-width: 36em;
+  padding: 1em;
+  background-color: rgba(51, 51, 51, 0.5);
+  margin: 0 auto;
+  border: 0;
+  resize: none;
+  border-radius: 0;
+  outline: none;
+}
+
+.zen-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: rgba(51, 51, 51, 0.5);
 }

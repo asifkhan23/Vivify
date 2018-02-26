@@ -1,14 +1,13 @@
 {
-    "manifest_version": 2,
-    "version": "1.0",
-    "name": "Custom new tab",
-    "description": "Makes the new tab beautiful",
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "Custom new tab",
+  "description": "Makes the new tab beautiful",
 
-    "chrome_url_overrides": {
-        "newtab" : "newtab.html"
-    },
-    "permissions": [
-        "https://api.forismatic.com/"
-    ]
-
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "permissions": [
+    "https://api.forismatic.com/", "storage"
+  ]
 }
