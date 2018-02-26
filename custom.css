@@ -1,14 +1,14 @@
 body {
-  margin: 0;
+    margin: 0;
 }
 
 .contentContainer {
-  /* position: absolute;
+    /* position: absolute;
   display: block; */
-  width: 100%;
-  /* top: 50%;
+    width: 100%;
+    /* top: 50%;
   left: 50%; */
-  /* transform: translate(-50%, -50%);
+    /* transform: translate(-50%, -50%);
   background: rgba(51, 51, 51, 0.8);
   font: 20px sans-serif;
   color: #fff;
@@ -17,259 +17,301 @@ body {
 }
 
 .contentContainer {
-  width: 100%;
-  background-size: cover;
-  height: 100vh
+    width: 100%;
+    background-size: cover;
+    height: 100vh;
 }
 
 .img-title {
-  position: absolute;
-  bottom: 4px;
-  right: 6px;
-  background: rgba(51, 51, 51, 0.5);
-  font: 10px sans-serif;
-  color: #fff;
-  text-align: center;
-  padding: 5px 24px;
+    position: absolute;
+    bottom: 4px;
+    right: 6px;
+    background: rgba(51, 51, 51, 0.5);
+    font: 10px sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 5px 24px;
 }
 
 .dateContainer {
-  position: absolute;
-  right: 0px;
-  top: 4px;
-  /* background: rgba(51, 51, 51, 0.5); */
-  font: 14px sans-serif;
-  color: #fff;
-  text-align: center;
-  padding: 19px 33px;
+    position: absolute;
+    right: 0px;
+    top: 4px;
+    /* background: rgba(51, 51, 51, 0.5); */
+    font: 14px sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 19px 33px;
 }
 
 .quote {
-  position: relative;
-  top: 79%;
-  font: 17px sans-serif;
-  color: #fff;
-  text-align: center;
-  padding: 20px 41px;
-  bottom: 0;
+    position: relative;
+    top: 79%;
+    font: 17px sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 20px 41px;
+    bottom: 0;
 }
 
 .leftQuote {
-  background-image: url(images/quote-left.svg);
-  background-size: 10px;
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  position: relative;
-  top: -18px;
+    background-image: url(images/quote-left.svg);
+    background-size: 10px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    position: relative;
+    top: -18px;
 }
 
 .rightQuote {
-  background-image: url(images/right-quotation-mark.svg);
-  background-size: 10px;
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  position: relative;
-  top: -18px;
+    background-image: url(images/right-quotation-mark.svg);
+    background-size: 10px;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    position: relative;
+    top: -18px;
 }
 
 .quote p {
-  display: inline-block;
+    display: inline-block;
 }
 
 .time {
-  position: absolute;
-  top: 20%;
-  left: 32%;
-  font: 120px sans-serif;
-  color: #fff;
-  text-align: center;
-  padding: 20px 41px;
-  letter-spacing: 3px;
+    position: absolute;
+    top: 20%;
+    left: 32%;
+    font: 120px sans-serif;
+    text-align: center;
+    padding: 20px 41px;
+    letter-spacing: 3px;
+    color: #FFFFFF;
+    text-shadow:4px 1px 4px #212121;
 }
 
 .newsContainer {
-  background: rgba(51, 51, 51, 0.5);
-  display: inline-block;
+    background: rgba(117,117,117, 0.4);
+    display: inline-block;
+    overflow: auto;
+    max-height: 96vh;
+    margin: 0;
+    top: 4vh;
+    position: absolute;
 }
+
+    .newsContainer::-webkit-scrollbar {
+        width: 0px;
+        background-color: #F5F5F5;
+    }
+
+.card {
+    display: flow-root;
+    background: rgb(245,245,245);
+    border-color: rgb(245,245,245);
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+    .card hr {
+        margin-top: 10px;
+        height: 3px;
+        background-color: #E53935; 
+        /*background-color: #00A2E0;*/
+        margin-bottom: -5px;
+    }
+
+    .card .title {
+        margin: 15px 15px 10px;
+    }
 
 .news {
-  padding: 13px 24px;
-  list-style-type: none;
+    padding: 15px 20px;
+    width: 15vw;
+    /* list-style-type: none; */
 }
 
-.news li {}
+    .news img {
+        width: 100%;
+        height: auto;
+        padding: 15px 15px 5px;
+        margin: -15px;
+    }
 
-.news a {
-  font: 10px 'Roboto', sans-serif;
-  color: #fff;
-  text-decoration: none;
-}
+    .news p {
+        padding: 0px 15px;
+        word-wrap: break-word;
+    }
+
+    .news a {
+        font: 10px 'Roboto', sans-serif;
+        color: #000;
+        text-decoration: none;
+    }
 
 ul.social-icons {
-  float: right;
-  list-style: none;
-  width: 20px;
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  z-index: 99999;
+    float: right;
+    list-style: none;
+    width: 20px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    z-index: 99999;
 }
 
-ul.social-icons li {
-  float: left;
-  margin: 10px 0 0 0;
-  height: 20px;
-  width: 20px;
-}
+    ul.social-icons li {
+        float: left;
+        margin: 10px 0 0 0;
+        height: 20px;
+        width: 20px;
+    }
 
-ul.social-icons li a {
-  float: left;
-  height: 20px;
-  width: 20px;
-}
+        ul.social-icons li a {
+            float: left;
+            height: 20px;
+            width: 20px;
+        }
 
-ul.social-icons li.youtube {
-  background: url(images/youtube.svg);
-  background-size: 20px 20px;
-}
+        ul.social-icons li.youtube {
+            background: url(images/youtube.svg);
+            background-size: 20px 20px;
+        }
 
-ul.social-icons li.facebook {
-  background: url(images/facebook.svg);
-  background-size: 20px 20px;
-}
+        ul.social-icons li.facebook {
+            background: url(images/facebook.svg);
+            background-size: 20px 20px;
+        }
 
-ul.social-icons li.twitter {
-  background: url(images/twitter.svg);
-  background-size: 20px 20px;
-}
+        ul.social-icons li.twitter {
+            background: url(images/twitter.svg);
+            background-size: 20px 20px;
+        }
 
-ul.social-icons li.gmail {
-  background: url(images/gmail.svg);
-  background-size: 20px 20px;
-}
+        ul.social-icons li.gmail {
+            background: url(images/gmail.svg);
+            background-size: 20px 20px;
+        }
 
-ul.social-icons li.gplus {
-  background: url(images/google-plus.svg);
-  background-size: 20px 20px;
-}
+        ul.social-icons li.gplus {
+            background: url(images/google-plus.svg);
+            background-size: 20px 20px;
+        }
 
-ul.social-icons li.linkedin {
-  background: url(images/linkedin.svg);
-  background-size: 20px 20px;
-}
+        ul.social-icons li.linkedin {
+            background: url(images/linkedin.svg);
+            background-size: 20px 20px;
+        }
 
 #hideNews {
-  display: none;
+    display: none;
 }
 
 .button {
-  position: absolute;
-  display: inline-block;
-  /* border-radius: 4px; */
-  /* background-color: #f4511e; */
-  background: rgba(51, 51, 51, 0.5);
-  border: none;
-  color: #FFFFFF;
-  text-align: center;
-  font-size: 15px;
-  /* padding: 20px; */
-  width: 90px;
-  transition: all 0.5s;
-  cursor: pointer;
-  margin: 5px;
-  top: 0px
+    position: absolute;
+    display: inline-block;
+    border-radius: 4px;
+    /* background-color: #f4511e; */
+    background: rgba(51, 51, 51, 0.5);
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    /* padding: 20px; */
+    width: 90px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 3px;
+    top: 0px;
 }
 
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
 
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
+        .button span:after {
+            content: '\00bb';
+            position: absolute;
+            opacity: 0;
+            top: 0;
+            right: -20px;
+            transition: 0.5s;
+        }
 
-.button:hover span {
-  padding-right: 25px;
-}
+    .button:hover span {
+        padding-right: 25px;
+    }
 
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
+        .button:hover span:after {
+            opacity: 1;
+            right: 0;
+        }
 
 /* text area css */
 
 textarea, button {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 form {
-  margin-top: 2.5em;
-  max-width: 30em;
+    margin-top: 2.5em;
+    max-width: 30em;
 }
 
 label[for=comment] {
-  color: #339966;
-  display: block;
-  font-style: italic;
-  margin-bottom: 0.375em;
+    color: #339966;
+    display: block;
+    font-style: italic;
+    margin-bottom: 0.375em;
 }
 
 .zennable {
-  position: absolute;
-  width: 18%;
-  height: 100%;
-  right: 0px;
+    position: absolute;
+    width: 18%;
+    height: 100%;
+    right: 0px;
 }
 
-.zennable textarea {
-  background-color: #f6f6f6;
-  border: 0;
-  border-radius: 3px;
-  box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  color: #333;
-  display: block;
-  font-size: 1em;
-  height: 10em;
-  line-height: 1.5em;
-  padding: 0.25em 0.5em;
-  width: 100%;
-  color: white;
-}
+    .zennable textarea {
+        background-color: #f6f6f6;
+        border: 0;
+        border-radius: 3px;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        color: #333;
+        display: block;
+        font-size: 1em;
+        height: 10em;
+        line-height: 1.5em;
+        padding: 0.25em 0.5em;
+        width: 100%;
+        color: white;
+    }
 
-.zennable textarea:focus {
-  background-color: rgba(51, 51, 51, 0.8);
-}
+        .zennable textarea:focus {
+            background-color: rgba(51, 51, 51, 0.8);
+        }
 
 .zen-backdrop textarea {
-  height: 100%;
-  font-size: 1.375em;
-  max-width: 36em;
-  padding: 1em;
-  background-color: rgba(51, 51, 51, 0.5);
-  margin: 0 auto;
-  border: 0;
-  resize: none;
-  border-radius: 0;
-  outline: none;
+    height: 100%;
+    font-size: 1.375em;
+    max-width: 36em;
+    padding: 1em;
+    background-color: rgba(51, 51, 51, 0.5);
+    margin: 0 auto;
+    border: 0;
+    resize: none;
+    border-radius: 0;
+    outline: none;
 }
 
 .zen-backdrop {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background-color: rgba(51, 51, 51, 0.5);
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(51, 51, 51, 0.5);
 }
