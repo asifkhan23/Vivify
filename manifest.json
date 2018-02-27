@@ -8,6 +8,6 @@
     "newtab": "newtab.html"
   },
   "permissions": [
-    "https://api.forismatic.com/", "storage"
+    "https://api.forismatic.com/", "storage", "topSites"
   ]
 }
