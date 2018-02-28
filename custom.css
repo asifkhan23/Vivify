@@ -90,6 +90,33 @@ body {
     text-shadow:4px 1px 4px #212121;
 }
 
+.weatherContainer {
+    position: absolute;
+    left: 45%;
+    top: 55%;
+    background: rgba(51, 51, 51, 0.5);
+    font: 14px sans-serif;
+    color: #fff;
+    text-align: center;
+    padding: 19px 33px;
+}
+
+.weatherContainer .temp span{
+    display: inline-block;
+    font-size: 12px;
+    opacity: .5;
+    margin: 0 3px;
+}
+
+.weatherContainer .temp strong{
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.weatherContainer .iconDesc{
+    margin-bottom: 10px;
+}
+
 .newsContainer {
     background: rgba(117,117,117, 0.4);
     display: inline-block;

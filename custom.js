@@ -1,11 +1,20 @@
 var beautifulNewTab = (function beautifulNewTab() {
 
+  var categoryArray = [
+    'movies',
+    'famous'
+  ];
+
+  var randomCategory = Math.floor(Math.random()*categoryArray.length);
   //var QUOTES_API = "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
-  var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
+  // var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
+  var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + categoryArray[randomCategory];
   //var IMAGE_API = "https://api.nasa.gov/planetary/apod?api_key=U1FBlDl0BCK0NL5MGNQANPy8PJJL5Z5p509k7vV1&count=1";
   var IMAGE_API = "https://source.unsplash.com/random";
 
   var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
+
+  var WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657"
 
   var myHeaders = new Headers({
     "Content-Type": "application/x-www-form-urlencoded",
@@ -77,7 +86,27 @@ var beautifulNewTab = (function beautifulNewTab() {
       }
     })
 
-  //fetch quote
+  //fetch Weather
+  fetch(WEATHER_API)
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(resp) {
+      console.log("resp",resp);
+      var cityElem = document.querySelector('.city');
+      var tempElem = document.querySelector('.temp');
+      var iconDescElem = document.querySelector('.iconDesc');
+      var iconElem = document.querySelector('.icon');
+      var weatherCode = resp.weather[0];
+      var iconUrl = "http://openweathermap.org/img/w/" + weatherCode.icon + ".png";
+      iconElem.innerHTML = ("<img src='" + iconUrl  + "'>");
+      cityElem.innerHTML= resp.name;
+      iconDescElem.innerHTML = weatherCode.main;
+      tempElem.innerHTML=  "<span>" + resp.main.temp_min + " &#8451 </span>  < <strong> " + resp.main.temp + " &#8451 </strong>  < <span>" + resp.main.temp_max + " &#8451 </span>";
+
+    })
+
+  //fetch Quote
   fetch(QUOTES_API, init)
     .then(function(response) {
       return response.json();
