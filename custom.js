@@ -5,11 +5,9 @@ var beautifulNewTab = (function beautifulNewTab() {
     'famous'
   ];
 
-  var randomCategory = Math.floor(Math.random()*categoryArray.length);
-  //var QUOTES_API = "https://api.forismatic.com/api/1.0/?method=getQuote&key=457653&format=json&lang=en";
-  // var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
+  var randomCategory = Math.floor( Math.random() * categoryArray.length );
+ 
   var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + categoryArray[randomCategory];
-  //var IMAGE_API = "https://api.nasa.gov/planetary/apod?api_key=U1FBlDl0BCK0NL5MGNQANPy8PJJL5Z5p509k7vV1&count=1";
   var IMAGE_API = "https://source.unsplash.com/random";
 
   var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
@@ -66,8 +64,6 @@ var beautifulNewTab = (function beautifulNewTab() {
     .then(function(resp) {
       var imageElem = document.querySelector('.contentContainer');
       imageElem.style.backgroundImage = "url(" + resp.url + ")";
-      // var imgTitle = document.querySelector('.img-title');
-      // imgTitle.innerHTML = "<p>" + resp[0].title + "</p>";
     })
 
   // fetch News

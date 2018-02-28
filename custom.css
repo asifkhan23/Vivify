@@ -81,11 +81,14 @@ body {
 .time {
     position: absolute;
     top: 20%;
-    left: 32%;
+    width: 100vw;
     font: 120px sans-serif;
     text-align: center;
-    padding: 20px 41px;
+    padding: 20px 0px;
     letter-spacing: 3px;
+}
+
+.shadowText{
     color: #FFFFFF;
     text-shadow:4px 1px 4px #212121;
 }
