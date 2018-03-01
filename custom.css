@@ -74,6 +74,17 @@ body {
     top: -18px;
 }
 
+.editIcon{
+    background-image: url(images/gearIcon.png);
+    background-size: 15px;
+    width: 15px;
+    height: 15px;
+    /* display: inline-block; */
+    position: absolute;
+    margin-top: 7px;
+    margin-left: 2%;
+}
+
 .quote p {
     display: inline-block;
 }
@@ -95,13 +106,13 @@ body {
 
 .weatherContainer {
     position: absolute;
-    left: 45%;
-    top: 55%;
     background: rgba(51, 51, 51, 0.5);
     font: 14px sans-serif;
     color: #fff;
     text-align: center;
-    padding: 19px 33px;
+    padding: 20px 0px;
+    width: 100vw;
+    top: 60%;   
 }
 
 .weatherContainer .temp span{
@@ -182,7 +193,7 @@ body {
 ul.social-icons {
     float: right;
     list-style: none;
-    width: 20px;
+    /* width: 20px; */
     position: absolute;
     right: 10px;
     bottom: 10px;
@@ -191,7 +202,7 @@ ul.social-icons {
 
     ul.social-icons li {
         float: left;
-        margin: 10px 0 0 0;
+        margin: 0 3px;
         height: 20px;
         width: 20px;
     }

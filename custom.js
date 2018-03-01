@@ -1,13 +1,6 @@
 var beautifulNewTab = (function beautifulNewTab() {
-
-  var categoryArray = [
-    'movies',
-    'famous'
-  ];
-
-  var randomCategory = Math.floor( Math.random() * categoryArray.length );
  
-  var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + categoryArray[randomCategory];
+  var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous" ;
   var IMAGE_API = "https://source.unsplash.com/random";
 
   var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
