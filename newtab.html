@@ -6,18 +6,41 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
-<body>
+<body style="background: rgb(24, 253, 54)">
+  <div>  
+    <table>
+      <tr>
+        <td>
+          <div class="newsContainer" id="newsContainer">
+              <div class="news"></div>
+          </div>
+        </td>
+        <td>
+          <div id="toggleDiv">
+            <span id="NewsToggle" class="toggleButton"><</span>
+          </div>          
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="buttonsGroup">
+      <div id="settings"><img class="gear" src="images\ribbon5.png" alt="settings" ></div> 
+      <!-- <button class="button" id="showNews" style="vertical-align:middle"><span> News </span></button>
+      <button class="button" id="hideNews" style="vertical-align:middle"><span> News </span></button> -->
+  </div>
   <div class="dateContainer">
     <div class="date"></div>
   </div>
   <div class="time shadowText"></div>
-  <div class="weatherContainer">
+  <div class="weatherContainerParent">
+    <div class="weatherContainer">
     <div class="city"></div>
     <span class='editIcon'></span>
     <div class="icon"></div>
     <div class="iconDesc"></div>
     <div class="temp"></div>
   </div>
+</div>
   <div class="zennable">
     <div class="zen-backdrop">
       <textarea id="note-text"></textarea>
@@ -25,19 +48,14 @@
   </div>
   <div class='contentContainer'>
     <div class='quote'></div>
-    <button class="button" id="showNews" style="vertical-align:middle"><span> News </span></button>
-    <button class="button" id="hideNews" style="vertical-align:middle"><span> News </span></button>
-    <div class="newsContainer" style="display:none;" id="newsContainer">
-        <div class="news"></div>
-    </div>
-    <ul class="social-icons">
-      <li class='youtube'><a href="https://www.youtube.com/" target="_blank"></a></li>
-      <li class='facebook'><a href="https://www.facebook.com/" target="_blank"></a></li>
-      <li class='gmail'><a href="https://gmail.com/" target="_blank"></a></li>
-      <li class='twitter'><a href="https://twitter.com/" target="_blank"></a></li>
-      <li class='gplus'><a href="https://plus.google.com/" target="_blank"></a></li>
-      <li class='linkedin'><a href="https://linkedin.com/" target="_blank"></a></li>
-    </ul>
+      <ul class="social-icons">
+        <li class='youtube'><a href="https://www.youtube.com/" target="_blank"></a></li>
+        <li class='facebook'><a href="https://www.facebook.com/" target="_blank"></a></li>
+        <li class='gmail'><a href="https://gmail.com/" target="_blank"></a></li>
+        <li class='twitter'><a href="https://twitter.com/" target="_blank"></a></li>
+        <li class='gplus'><a href="https://plus.google.com/" target="_blank"></a></li>
+        <li class='linkedin'><a href="https://linkedin.com/" target="_blank"></a></li>
+      </ul>
   </div>
   <!-- <div class="img-title"></div> -->
   <script src="custom.js"></script>

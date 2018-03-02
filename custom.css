@@ -1,19 +1,10 @@
 body {
     margin: 0;
+    overflow: hidden;
 }
 
 .contentContainer {
-    /* position: absolute;
-  display: block; */
     width: 100%;
-    /* top: 50%;
-  left: 50%; */
-    /* transform: translate(-50%, -50%);
-  background: rgba(51, 51, 51, 0.8);
-  font: 20px sans-serif;
-  color: #fff;
-  text-align: center;
-  padding: 55px 12px; */
 }
 
 .contentContainer {
@@ -109,10 +100,11 @@ body {
     background: rgba(51, 51, 51, 0.5);
     font: 14px sans-serif;
     color: #fff;
-    text-align: center;
     padding: 20px 0px;
-    width: 100vw;
-    top: 60%;   
+    top: 50%;
+    width: 20vw;
+    text-align: center;
+    margin: 0vw 40vw;   
 }
 
 .weatherContainer .temp span{
@@ -131,14 +123,25 @@ body {
     margin-bottom: 10px;
 }
 
+table{
+    border: 0;
+    padding: 0;
+    margin: 0;
+    border-spacing: 0;
+}
+
+table td{
+    padding:0;
+}
+
 .newsContainer {
     background: rgba(117,117,117, 0.4);
     display: inline-block;
     overflow: auto;
-    max-height: 96vh;
+    max-height: 99vh;
     margin: 0;
-    top: 4vh;
-    position: absolute;
+    margin-top: 4vh;
+    box-shadow: 1px 1px 5px #555;
 }
 
     .newsContainer::-webkit-scrollbar {
@@ -188,6 +191,28 @@ body {
         font: 10px 'Roboto', sans-serif;
         color: #000;
         text-decoration: none;
+    }
+
+.toggleButton{
+    font-weight: bold;
+    color: #FFFFFF;
+    text-shadow:4px 1px 4px #212121; 
+    height: 100%;
+    line-height: 99vh;
+    
+}
+
+#toggleDiv{
+    background: rgba(117,117,117, 0.4);
+    height: 99vh;
+    margin-top: 4vh;
+    padding: 0px 4px;
+    border-left: 1px solid #fff;
+    cursor: pointer;
+    box-shadow: inset 1px 1px 10px #666;
+}
+    #toggleDiv:hover{
+        box-shadow: 1px 1px 10px #666;
     }
 
 ul.social-icons {
@@ -355,4 +380,16 @@ label[for=comment] {
     left: 0;
     bottom: 0;
     background-color: rgba(51, 51, 51, 0.5);
+}
+
+#settings{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+}
+
+#settings img{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 }

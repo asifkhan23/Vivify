@@ -1,7 +1,7 @@
 var beautifulNewTab = (function beautifulNewTab() {
  
   var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous" ;
-  var IMAGE_API = "https://source.unsplash.com/random";
+ var IMAGE_API = "https://source.unsplash.com/random";
 
   var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
 
@@ -70,7 +70,7 @@ var beautifulNewTab = (function beautifulNewTab() {
           "<div class=\"card\">" +
           "<img src=" + data.articles[i].urlToImage + "><br/><hr/>" +
           "<div class=\"title\"><a href=" + data.articles[i].url + "><span style=\"font-size:14px\">" + data.articles[i].title + "</span></a></div>" +
-          //"<p>"+ data.articles[i].description.substr(0,120) +".. </p>"+
+          "<p>"+ data.articles[i].description.substr(0,120) +".. </p>"+
           "</div>";
       }
     })
