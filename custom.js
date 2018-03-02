@@ -106,21 +106,21 @@ var beautifulNewTab = (function beautifulNewTab() {
     })
 })();
 
-document.getElementById("showNews").addEventListener("click", displayNews);
+// document.getElementById("showNews").addEventListener("click", displayNews);
 
-function displayNews() {
-  document.getElementById('showNews').style.display = "none";
-  document.getElementById('hideNews').style.display = "block";
-  document.getElementById('newsContainer').style.display = "inline-block";
-}
+// function displayNews() {
+//   document.getElementById('showNews').style.display = "none";
+//   document.getElementById('hideNews').style.display = "block";
+//   document.getElementById('newsContainer').style.display = "inline-block";
+// }
 
-document.getElementById("hideNews").addEventListener("click", hideNews);
+// document.getElementById("hideNews").addEventListener("click", hideNews);
 
-function hideNews() {
-  document.getElementById('showNews').style.display = "block";
-  document.getElementById('hideNews').style.display = "none";
-  document.getElementById('newsContainer').style.display = "none";
-}
+// function hideNews() {
+//   document.getElementById('showNews').style.display = "block";
+//   document.getElementById('hideNews').style.display = "none";
+//   document.getElementById('newsContainer').style.display = "none";
+// }
 
 
 //Text Area Fucntion
