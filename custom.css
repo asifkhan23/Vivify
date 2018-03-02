@@ -140,7 +140,6 @@ table td{
     overflow: auto;
     max-height: 99vh;
     margin: 0;
-    margin-top: 4vh;
     box-shadow: 1px 1px 5px #555;
 }
 
@@ -194,25 +193,35 @@ table td{
     }
 
 .toggleButton{
-    font-weight: bold;
-    color: #FFFFFF;
-    text-shadow:4px 1px 4px #212121; 
+    color: transparent;
+    /* color: #FFFFFF;
+    text-shadow: 4px 1px 4px #212121;
     height: 100%;
-    line-height: 99vh;
-    
+    line-height: 35px; */
 }
 
-#toggleDiv{
-    background: rgba(117,117,117, 0.4);
-    height: 99vh;
-    margin-top: 4vh;
+/* #toggleDiv2{
+    height: 0;
+    width: 0;
     padding: 0px 4px;
-    border-left: 1px solid #fff;
     cursor: pointer;
-    box-shadow: inset 1px 1px 10px #666;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid red;
+} */
+
+#toggleDiv{
+    background: #2196F3;
+    height: 6vh;
+    padding: 0px 4px;
+    /* border: 1px solid #fff; */
+    cursor: pointer;
+    /* box-shadow: 1px 1px 10px #666; */
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
 }
     #toggleDiv:hover{
-        box-shadow: 1px 1px 10px #666;
+        box-shadow: inset 1px 1px 10px #666;
     }
 
 ul.social-icons {
@@ -267,7 +276,7 @@ ul.social-icons {
         background: url(images/linkedin.svg);
         background-size: 20px 20px;
     }
-
+/* 
 #hideNews {
     display: none;
 }
@@ -276,13 +285,11 @@ ul.social-icons {
     position: absolute;
     display: inline-block;
     border-radius: 4px;
-    /* background-color: #f4511e; */
     background: rgba(51, 51, 51, 0.5);
     border: none;
     color: #FFFFFF;
     text-align: center;
     font-size: 15px;
-    /* padding: 20px; */
     width: 90px;
     transition: all 0.5s;
     cursor: pointer;
@@ -313,7 +320,7 @@ ul.social-icons {
         .button:hover span:after {
             opacity: 1;
             right: 0;
-        }
+        } */
 
 /* text area css */
 
@@ -386,10 +393,18 @@ label[for=comment] {
     width: 30px;
     height: 30px;
     position: absolute;
+    padding: 5px;
 }
-
+    #settings img:hover{
+        transform: rotate(30deg);
+    }
 #settings img{
     width: 100%;
     height: 100%;
     cursor: pointer;
+}
+
+.buttonsGroup{
+    margin-top: -49vh;
+    margin-left: -18px;
 }
