@@ -413,3 +413,19 @@ label[for=comment] {
     margin-top: -49vh;
     margin-left: -18px;
 }
+
+#down{
+    width: 100%;
+    text-align: center;
+    line-height: 4vh;
+    color: #fff;
+    background: linear-gradient(#000, #757575);
+    opacity: 0.5;
+    margin-top: -25px;
+    transform: rotate(180deg);
+    cursor: pointer;
+}
+
+    #down:active{
+        box-shadow: inset 1px 1px 10px #666 
+    }

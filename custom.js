@@ -81,7 +81,7 @@ var beautifulNewTab = (function beautifulNewTab() {
       return response.json();
     })
     .then(function(resp) {
-      console.log("resp",resp);
+      //console.log("resp",resp);
       var cityElem = document.querySelector('.city');
       var tempElem = document.querySelector('.temp');
       var iconDescElem = document.querySelector('.iconDesc');
@@ -112,28 +112,34 @@ function displayNews() {
   if(document.getElementById("NewsToggle").innerText == "<")
   {
     document.getElementById("newsContainer").style.transition = "width 0.5s";
+    document.getElementById("down").style.transition = "width 0.5s";
     //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-in"
+
     document.getElementById("newsContainer").style.width = "0vw";
+    document.getElementById("down").style.width = "0vw";
+
     document.getElementById("newsContainer").style.boxShadow = "box-shadow: 0px 0px 0px transparent";
     document.getElementById("NewsToggle").innerText = ">";
   }
   else
   {
     document.getElementById("newsContainer").style.transition = "width 0.5s";
+    document.getElementById("down").style.transition = "width 0.5s";
     //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-out"
+
     document.getElementById("newsContainer").style.width = "18vw";
+    document.getElementById("down").style.width = "100%";
+
     document.getElementById("newsContainer").style.boxShadow = "box-shadow: 1px 1px 5px #555";
     document.getElementById("NewsToggle").innerText = "<";
   }
 }
 
-// document.getElementById("hideNews").addEventListener("click", hideNews);
+document.getElementById("down").addEventListener("mousedown", scrollNews);
 
-// function hideNews() {
-//   document.getElementById('showNews').style.display = "block";
-//   document.getElementById('hideNews').style.display = "none";
-//   document.getElementById('newsContainer').style.display = "none";
-// }
+function scrollNews() {
+  document.getElementsByClassName("newsContainer").scrollTop = +10;
+}
 
 
 //Text Area Fucntion
@@ -170,11 +176,11 @@ function displayNews() {
   bindNoteHandlers();
 })();
 
-chrome.topSites.get(function(urls) {
-  urls.forEach(function({
-    url,
-    title
-  }) {
-    console.log(url, title);
-  })
-});
+// chrome.topSites.get(function(urls) {
+//   urls.forEach(function({
+//     url,
+//     title
+//   }) {
+//     console.log(url, title);
+//   })
+// });
