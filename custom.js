@@ -112,6 +112,7 @@ function displayNews() {
   if(document.getElementById("NewsToggle").innerText == "<")
   {
     document.getElementById("newsContainer").style.transition = "width 0.5s";
+    //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-in"
     document.getElementById("newsContainer").style.width = "0vw";
     document.getElementById("newsContainer").style.boxShadow = "box-shadow: 0px 0px 0px transparent";
     document.getElementById("NewsToggle").innerText = ">";
@@ -119,6 +120,7 @@ function displayNews() {
   else
   {
     document.getElementById("newsContainer").style.transition = "width 0.5s";
+    //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-out"
     document.getElementById("newsContainer").style.width = "18vw";
     document.getElementById("newsContainer").style.boxShadow = "box-shadow: 1px 1px 5px #555";
     document.getElementById("NewsToggle").innerText = "<";
