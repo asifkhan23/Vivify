@@ -218,7 +218,7 @@ table td{
 } */
 
 #toggleDiv{
-    background: #2196F3;
+    background: #ffffff;
     height: 7vh;
     width: 7vh;
     /* padding: 0px 4px; */
@@ -365,15 +365,15 @@ label[for=comment] {
     }
 
         .zennable textarea:focus {
-            background-color: rgba(51, 51, 51, 0.8);
+            background-color: rgb(51, 51, 51);
         }
 
 .zen-backdrop textarea {
-    height: 100%;
+    height: 85vh;
     font-size: 1.375em;
     max-width: 36em;
     padding: 1em;
-    background-color: rgba(51, 51, 51, 0.5);
+    background-color: rgb(51, 51, 51);
     margin: 0 auto;
     border: 0;
     resize: none;
@@ -383,13 +383,39 @@ label[for=comment] {
 
 .zen-backdrop {
     position: absolute;
-    top: 0;
+    top: 7vh;
     right: 0;
     left: 0;
     bottom: 0;
-    background-color: rgba(51, 51, 51, 0.5);
+    background-color: rgb(51, 51, 51);
 }
 
+.zen-backdrop hr{
+    margin: 0 5%;
+    width: 90%;
+    opacity: 0.5;
+}
+
+.NotepadHeader{
+    background-color: #3D5AFE;
+    color: #FFFFFF;
+    width: 100%;
+    height: 3vh;
+    padding: 2vh;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .zen-backdrop #headdingText{
+    background-color: #333333;
+    color: #FFFFFF;
+    width: 100%;
+    height: 8vh;
+    padding: 15px 15px 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
 #settings{
     width: 30px;
     height: 30px;

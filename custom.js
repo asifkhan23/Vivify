@@ -177,10 +177,13 @@ function scrollNews() {
   function bindNoteHandlers() {
     var elem = document.getElementById('note-text'),
       saveHandler = _makeDelayed();
+    var head = document.getElementById('headdingText'),
+      saveHandler = _makeDelayed();
 
     function save() {
       chrome.storage.sync.set({
-        'noteText': elem.value
+        'noteText': elem.value,
+        'headText': head.value
       });
     }
     // Throttle save so that it only occurs after 1 second without a keypress.
@@ -190,6 +193,14 @@ function scrollNews() {
     elem.addEventListener('blur', save);
     chrome.storage.sync.get('noteText', function(data) {
       elem.value = data.noteText ? data.noteText : '';
+    });
+
+    head.addEventListener('keypress', function() {
+      saveHandler(save, 1000);
+    });
+    head.addEventListener('blur', save);
+    chrome.storage.sync.get('headText', function(data) {
+      head.value = data.headText ? data.headText : '';
     });
   }
 
