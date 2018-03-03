@@ -397,7 +397,8 @@ label[for=comment] {
 }
 
 .NotepadHeader{
-    background-color: #3D5AFE;
+    /* background-color: #3D5AFE; */
+    background: linear-gradient(40deg,#2096ff,#05ffa3);
     color: #FFFFFF;
     width: 100%;
     height: 3vh;
@@ -443,7 +444,6 @@ label[for=comment] {
     height: 7vh;
     color: #fff;
     background: linear-gradient(#000, transparent);
-    opacity: 0.5;
     margin-top: -7vh;
     transform: rotate(180deg);
     cursor: pointer;
