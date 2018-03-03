@@ -107,6 +107,7 @@ var beautifulNewTab = (function beautifulNewTab() {
 })();
 
 document.getElementById("toggleDiv").addEventListener("click", displayNews);
+document.getElementById("divNoteToggle").addEventListener("click", displayNote);
 
 function displayNews() {
   if(document.getElementById("NewsToggle").innerText == "<")
@@ -132,6 +133,29 @@ function displayNews() {
 
     document.getElementById("newsContainer").style.boxShadow = "box-shadow: 1px 1px 5px #555";
     document.getElementById("NewsToggle").innerText = "<";
+  }
+}
+
+function displayNote() {
+  if(document.getElementById("toggleNote").innerText == "<")
+  {
+    document.getElementById("noteTab").style.transition = "width 0.5s";
+    document.getElementById("noteTab").style.width = "0vw";
+    // document.getElementById("noteBackdrop").style.transition = "width 0.5s";
+    // document.getElementById("noteBackdrop").style.width = "18vw";
+    document.getElementById("divNoteToggle").style.transition = "right 0.5s";
+    document.getElementById("divNoteToggle").style.right = "0vw";
+    document.getElementById("toggleNote").innerText = ">";
+  }
+  else
+  {
+    document.getElementById("noteTab").style.transition = "width 0.5s";
+    document.getElementById("noteTab").style.width = "18vw";
+    // document.getElementById("noteBackdrop").style.transition = "width 0.5s";
+    // document.getElementById("noteBackdrop").style.width = "0vw";
+    document.getElementById("divNoteToggle").style.transition = "right 0.5s";
+    document.getElementById("divNoteToggle").style.right = "18vw";
+    document.getElementById("toggleNote").innerText = "<";
   }
 }
 

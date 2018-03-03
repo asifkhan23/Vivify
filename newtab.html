@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  <div style="position: absolute; z-index:200;">  
+  <div style="position: absolute; z-index:200;" class="fadeOnLoad">  
     <table>
       <tr>
         <td>
@@ -33,7 +33,7 @@
     <div class="date"></div>
   </div>
   <div class="time shadowText"></div>
-  <div class="weatherContainerParent">
+  <div class="weatherContainerParent fadeOnLoad">
     <div class="weatherContainer">
     <div class="city"></div>
     <span class='editIcon'></span>
@@ -42,8 +42,11 @@
     <div class="temp"></div>
   </div>
 </div>
-  <div class="zennable">
-    <div class="zen-backdrop">
+<div id="divNoteToggle" class="fadeOnLoad">
+    <div id="toggleNote" class="btnToggleNote"><</div>
+  </div>
+  <div id="noteTab" class="zennable fadeOnLoad">
+    <div id="noteBackdrop" class="zen-backdrop">
       <textarea id="note-text"></textarea>
     </div>
   </div>

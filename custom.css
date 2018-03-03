@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    overflow: hidden;
 }
 
 .contentContainer {
@@ -138,6 +139,7 @@ table td{
     display: inline-block;
     overflow: auto;
     max-height: 100vh;
+    height: 100vh;
     margin: 0;
     box-shadow: 1px 1px 5px #555;
 }
@@ -196,6 +198,7 @@ table td{
 
 .toggleButton{
     color: transparent;
+    font-size: 0px;
     /* color: #FFFFFF;
     text-shadow: 4px 1px 4px #212121;
     height: 100%;
@@ -215,6 +218,7 @@ table td{
 #toggleDiv{
     background: #2196F3;
     height: 6vh;
+    width: 2vh;
     padding: 0px 4px;
     cursor: pointer;
     border-top-right-radius: 50px;
@@ -228,6 +232,28 @@ table td{
     #toggleDiv:hover{
         box-shadow: inset 1px 1px 10px #666;
     }
+
+#divNoteToggle{
+    background: #F44336;
+    height: 6vh;
+    width: 2vh;
+    padding: 0vh 4px;
+    margin: 47vh 0vh;
+    margin-left: -20px;
+    cursor: pointer;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    position: absolute;
+    right: 245px;
+}
+    
+    #divNoteToggle:hover{
+        box-shadow: inset 1px 1px 10px #666;
+    }
+.btnToggleNote{
+    color: transparent;
+    font-size: 0px;
+}
 
 ul.social-icons {
     float: right;
@@ -347,7 +373,7 @@ label[for=comment] {
 
 .zennable {
     position: absolute;
-    width: 18%;
+    width: 18vw;
     height: 100%;
     right: 0px;
 }
@@ -429,3 +455,18 @@ label[for=comment] {
     #down:active{
         box-shadow: inset 1px 1px 10px #666 
     }
+
+.fadeOnLoad{
+    opacity: 0;
+    animation: fadeIn 3s ease-in 1 forwards; 
+    animation-delay: 1s;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
