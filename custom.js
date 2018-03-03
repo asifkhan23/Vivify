@@ -141,8 +141,6 @@ function displayNote() {
   {
     document.getElementById("noteTab").style.transition = "width 0.5s";
     document.getElementById("noteTab").style.width = "0vw";
-    // document.getElementById("noteBackdrop").style.transition = "width 0.5s";
-    // document.getElementById("noteBackdrop").style.width = "18vw";
     document.getElementById("divNoteToggle").style.transition = "right 0.5s";
     document.getElementById("divNoteToggle").style.right = "0vw";
     document.getElementById("toggleNote").innerText = ">";
@@ -151,8 +149,6 @@ function displayNote() {
   {
     document.getElementById("noteTab").style.transition = "width 0.5s";
     document.getElementById("noteTab").style.width = "18vw";
-    // document.getElementById("noteBackdrop").style.transition = "width 0.5s";
-    // document.getElementById("noteBackdrop").style.width = "0vw";
     document.getElementById("divNoteToggle").style.transition = "right 0.5s";
     document.getElementById("divNoteToggle").style.right = "18vw";
     document.getElementById("toggleNote").innerText = "<";
