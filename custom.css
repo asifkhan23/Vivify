@@ -26,13 +26,13 @@ body {
 
 .dateContainer {
     position: absolute;
-    right: 0px;
-    top: 4px;
-    /* background: rgba(51, 51, 51, 0.5); */
-    font: 14px sans-serif;
+    top: 19vh;
+    width: 100vw;
+    background: rgba(51, 51, 51, 0.25);
+    font: 20px sans-serif;
     color: #fff;
     text-align: center;
-    padding: 19px 33px;
+    padding: 1vh 0vh;
 }
 
 .quote {
@@ -219,8 +219,8 @@ table td{
 
 #toggleDiv{
     background: #ffffff;
-    height: 7vh;
-    width: 7vh;
+    height: 30px;
+    width: 30px;
     /* padding: 0px 4px; */
     cursor: pointer;
     /* border-top-right-radius: 50px;
@@ -234,6 +234,8 @@ table td{
     border-radius: 50px;
     /* width: 30px;
     margin-left: -17px; */
+    margin-top: -49.2vh;
+    margin-left: 0.8vh;
 }
     #toggleDiv:hover{
         box-shadow: inset 1px 1px 10px #666;
@@ -241,21 +243,20 @@ table td{
 
 #divNoteToggle{
     background: #FFFFFF;
-    height: 7vh;
-    width: 7vh;
-    /* padding: 0vh 4px; */
-    margin: 47vh 0vh;
+    height: 30px;
+    width: 30px;
+    margin: 1vh 1vh;
     margin-left: -20px;
     cursor: pointer;
     border-radius: 50px;
-    /* border-top-left-radius: 50px;
-    border-bottom-left-radius: 50px; */
     position: absolute;
     right: 18vw;
     background-image: url(images/notes.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
+    /* border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px; */
 }
     
     #divNoteToggle:hover{
@@ -434,7 +435,6 @@ label[for=comment] {
 
 .buttonsGroup{
     margin-top: -50vh;
-    margin-left: -7vh;
 }
 
 #down{
