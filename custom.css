@@ -273,10 +273,9 @@ table td{
 ul.social-icons {
     float: right;
     list-style: none;
-    /* width: 20px; */
     position: absolute;
-    right: 10px;
-    bottom: 5px;
+    right: 0px;
+    bottom: 0px;
     z-index: 99999;
 }
 

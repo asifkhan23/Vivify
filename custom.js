@@ -81,7 +81,7 @@ var beautifulNewTab = (function beautifulNewTab() {
       return response.json();
     })
     .then(function(resp) {
-      //console.log("resp",resp);
+      console.log("resp",resp);
       var cityElem = document.querySelector('.city');
       var tempElem = document.querySelector('.temp');
       var iconDescElem = document.querySelector('.iconDesc');
