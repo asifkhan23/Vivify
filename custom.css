@@ -236,9 +236,10 @@ table td{
     margin-left: -17px; */
     margin-top: -49.2vh;
     margin-left: 0.8vh;
+    box-shadow: inset 1px 1px 10px #666;
 }
     #toggleDiv:hover{
-        box-shadow: inset 1px 1px 10px #666;
+        box-shadow: inset 1px 1px 10px transparent;
     }
 
 #divNoteToggle{
@@ -257,10 +258,11 @@ table td{
     background-size: contain;
     /* border-top-left-radius: 50px;
     border-bottom-left-radius: 50px; */
+    box-shadow: inset 1px 1px 10px #666;
 }
     
     #divNoteToggle:hover{
-        box-shadow: inset 1px 1px 10px #666;
+        box-shadow:  1px 1px 10px transparent;
     }
 
 .btnToggleNote{
@@ -416,6 +418,7 @@ label[for=comment] {
     padding: 15px 15px 10px 15px;
     font-size: 16px;
     font-weight: bold;
+    overflow: hidden;
   }
   
 #settings{

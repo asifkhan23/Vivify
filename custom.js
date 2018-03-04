@@ -112,8 +112,8 @@ document.getElementById("divNoteToggle").addEventListener("click", displayNote);
 function displayNews() {
   if(document.getElementById("NewsToggle").innerText == "<")
   {
-    document.getElementById("newsContainer").style.transition = "width 0.5s";
-    document.getElementById("down").style.transition = "width 0.5s";
+    document.getElementById("newsContainer").style.transition = "width 0.25s";
+    document.getElementById("down").style.transition = "width 0.25s";
     //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-in"
 
     document.getElementById("newsContainer").style.width = "0vw";
@@ -139,9 +139,9 @@ function displayNews() {
 function displayNote() {
   if(document.getElementById("toggleNote").innerText == "<")
   {
-    document.getElementById("noteTab").style.transition = "width 0.5s";
+    document.getElementById("noteTab").style.transition = "width 0.25s";
     document.getElementById("noteTab").style.width = "0vw";
-    document.getElementById("divNoteToggle").style.transition = "right 0.5s";
+    document.getElementById("divNoteToggle").style.transition = "right 0.25s";
     document.getElementById("divNoteToggle").style.right = "0vw";
     document.getElementById("toggleNote").innerText = ">";
   }
