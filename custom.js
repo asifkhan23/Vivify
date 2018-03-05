@@ -1,7 +1,7 @@
 var beautifulNewTab = (function beautifulNewTab() {
- 
-  var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous" ;
- var IMAGE_API = "https://source.unsplash.com/random";
+
+  var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
+  var IMAGE_API = "https://source.unsplash.com/random";
 
   var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
 
@@ -81,17 +81,17 @@ var beautifulNewTab = (function beautifulNewTab() {
       return response.json();
     })
     .then(function(resp) {
-      console.log("resp",resp);
+      console.log("resp", resp);
       var cityElem = document.querySelector('.city');
       var tempElem = document.querySelector('.temp');
       var iconDescElem = document.querySelector('.iconDesc');
       var iconElem = document.querySelector('.icon');
       var weatherCode = resp.weather[0];
       var iconUrl = "http://openweathermap.org/img/w/" + weatherCode.icon + ".png";
-      iconElem.innerHTML = ("<img src='" + iconUrl  + "'>");
-      cityElem.innerHTML= resp.name;
+      iconElem.innerHTML = ("<img src='" + iconUrl + "'>");
+      cityElem.innerHTML = resp.name;
       iconDescElem.innerHTML = weatherCode.main;
-      tempElem.innerHTML=  "<span>" + resp.main.temp_min + " &#8451 </span>  < <strong> " + resp.main.temp + " &#8451 </strong>  < <span>" + resp.main.temp_max + " &#8451 </span>";
+      tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  < <strong> " + resp.main.temp + " &#8451 </strong>  < <span>" + resp.main.temp_max + " &#8451 </span>";
 
     })
 
@@ -110,8 +110,7 @@ document.getElementById("toggleDiv").addEventListener("click", displayNews);
 document.getElementById("divNoteToggle").addEventListener("click", displayNote);
 
 function displayNews() {
-  if(document.getElementById("NewsToggle").innerText == "<")
-  {
+  if (document.getElementById("NewsToggle").innerText == "<") {
     document.getElementById("newsContainer").style.transition = "width 0.25s";
     document.getElementById("down").style.transition = "width 0.25s";
     //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-in"
@@ -121,9 +120,7 @@ function displayNews() {
 
     document.getElementById("newsContainer").style.boxShadow = "box-shadow: 0px 0px 0px transparent";
     document.getElementById("NewsToggle").innerText = ">";
-  }
-  else
-  {
+  } else {
     document.getElementById("newsContainer").style.transition = "width 0.5s";
     document.getElementById("down").style.transition = "width 0.5s";
     //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-out"
@@ -137,16 +134,13 @@ function displayNews() {
 }
 
 function displayNote() {
-  if(document.getElementById("toggleNote").innerText == "<")
-  {
+  if (document.getElementById("toggleNote").innerText == "<") {
     document.getElementById("noteTab").style.transition = "width 0.25s";
     document.getElementById("noteTab").style.width = "0vw";
     document.getElementById("divNoteToggle").style.transition = "right 0.25s";
     document.getElementById("divNoteToggle").style.right = "0vw";
     document.getElementById("toggleNote").innerText = ">";
-  }
-  else
-  {
+  } else {
     document.getElementById("noteTab").style.transition = "width 0.5s";
     document.getElementById("noteTab").style.width = "18vw";
     document.getElementById("divNoteToggle").style.transition = "right 0.5s";
