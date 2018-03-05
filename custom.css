@@ -37,7 +37,7 @@ body {
 
 .quote {
   position: relative;
-  top: 79%;
+  top: 84%;
   font: 17px sans-serif;
   color: #fff;
   text-align: center;
@@ -254,7 +254,7 @@ table td {
   border-radius: 50px;
   position: absolute;
   right: 18vw;
-  background-image: url(images/note-icon.png);
+  background-image: url(images/check-mark.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -461,8 +461,8 @@ label[for=comment] {
 
 .fadeOnLoad {
   opacity: 0;
-  animation: fadeIn 1s ease-in 1 forwards;
-  animation-delay: 1s;
+  animation: fadeIn 2s ease-in 1 forwards;
+  /* animation-delay: 1s; */
 }
 
 @keyframes fadeIn {
