@@ -1,6 +1,7 @@
 body {
   margin: 0;
   overflow: hidden;
+  font-family: 'Open Sans', sans-serif !important;
 }
 
 .contentContainer {
@@ -467,7 +468,7 @@ label[for=comment] {
   width: 100%;
   height: 3vh;
   padding: 2vh;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: bold;
 }
 

@@ -2,11 +2,8 @@ var beautifulNewTab = (function beautifulNewTab() {
 
   var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
   var IMAGE_API = "https://source.unsplash.com/random";
-
   var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
-
-  var WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=dubai&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657"
-
+  var WEATHER_API_OLD = "http://api.openweathermap.org/data/2.5/weather?q=dubai&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657"
   var myHeaders = new Headers({
     "Content-Type": "application/x-www-form-urlencoded",
     "Accept": "application/json",
@@ -35,7 +32,6 @@ var beautifulNewTab = (function beautifulNewTab() {
   setInterval(function() {
     timeElement.innerHTML = getCurrentTime();
   }, 1000);
-
 
   function getCurrentTime() {
     var dateObj = new Date();
@@ -78,26 +74,74 @@ var beautifulNewTab = (function beautifulNewTab() {
     })
 
   //fetch Weather
-  fetch(WEATHER_API)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(resp) {
-      console.log("resp", resp);
-      var cityElem = document.querySelector('.city');
-      var tempElem = document.querySelector('.temp');
-      var iconDescElem = document.querySelector('.iconDesc');
-      var iconElem = document.querySelector('.icon');
-      var weatherDetails = document.querySelector('.weatherDetails ul');
-      var weatherCode = resp.weather[0];
-      var iconUrl = "http://openweathermap.org/img/w/" + weatherCode.icon + ".png";
-      iconElem.innerHTML = ("<img src='" + iconUrl + "'>");
-      cityElem.innerHTML = resp.name;
-      iconDescElem.innerHTML = weatherCode.main;
-      tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
-      weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
 
-    })
+  // fetch(WEATHER_API_OLD)
+  //   .then(function(response) {
+  //     return response.json();
+  //   })
+  //   .then(function(resp) {
+  //     console.log("resp", resp);
+  //     var cityElem = document.querySelector('.city');
+  //     var tempElem = document.querySelector('.temp');
+  //     var iconDescElem = document.querySelector('.iconDesc');
+  //     var iconElem = document.querySelector('.icon');
+  //     var weatherDetails = document.querySelector('.weatherDetails ul');
+  //     var weatherCode = resp.weather[0];
+  //     var iconUrl = "http://openweathermap.org/img/w/" + weatherCode.icon + ".png";
+  //     iconElem.innerHTML = ("<img src='" + iconUrl + "'>");
+  //     cityElem.innerHTML = resp.name;
+  //     iconDescElem.innerHTML = weatherCode.main;
+  //     tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
+  //     weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
+  //
+  //   })
+
+  chrome.storage.sync.get('location', function(data) {
+    weatherLocation.value = data.location ? data.location : '';
+    if (weatherLocation.value) {
+      fetchWeather();
+    }
+  });
+
+  document.getElementById("saveLocation").addEventListener("click", setLocation);
+  var weatherLocation = document.getElementById("location");
+
+  function setLocation() {
+    var weatherLocation = document.getElementById("location");
+    chrome.storage.sync.set({
+      'location': weatherLocation.value
+    }, function() {
+      chrome.storage.sync.get('location', function(data) {
+        weatherLocation.value = data.location ? data.location : '';
+        fetchWeather();
+      });
+    });
+  }
+
+  function fetchWeather() {
+    WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=" + weatherLocation.value + "&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657";
+    fetch(WEATHER_API)
+      .then(function(response) {
+        console.log(response);
+        return response.json();
+      })
+      .then(function(resp) {
+        console.log("resp", resp);
+        var cityElem = document.querySelector('.city');
+        var tempElem = document.querySelector('.temp');
+        var iconDescElem = document.querySelector('.iconDesc');
+        var iconElem = document.querySelector('.icon');
+        var weatherDetails = document.querySelector('.weatherDetails ul');
+        var weatherCode = resp.weather[0];
+        var iconUrl = "http://openweathermap.org/img/w/" + weatherCode.icon + ".png";
+        iconElem.innerHTML = ("<img src='" + iconUrl + "'>");
+        cityElem.innerHTML = resp.name;
+        iconDescElem.innerHTML = weatherCode.main;
+        tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
+        weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
+
+      })
+  }
 
   //fetch Quote
   fetch(QUOTES_API, init)
