@@ -5,7 +5,7 @@ var beautifulNewTab = (function beautifulNewTab() {
 
   var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
 
-  var WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=london&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657"
+  var WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=delhi&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657"
 
   var myHeaders = new Headers({
     "Content-Type": "application/x-www-form-urlencoded",
@@ -66,12 +66,14 @@ var beautifulNewTab = (function beautifulNewTab() {
     .then(data => {
       var newsElem = document.querySelector('.news');
       for (var i = 0; i < 10; i++) {
-        newsElem.innerHTML = newsElem.innerHTML +
-          "<div class=\"card\">" +
-          "<img src=" + data.articles[i].urlToImage + "><br/><hr/>" +
-          "<div class=\"title\"><a href=" + data.articles[i].url + "><span style=\"font-size:14px\">" + data.articles[i].title + "</span></a></div>" +
-          //"<p>"+ data.articles[i].description.substr(0,120) +".. </p>"+
-          "</div>";
+        if (data.articles[i].urlToImage != null) {
+          newsElem.innerHTML = newsElem.innerHTML +
+            "<div class=\"card\">" +
+            "<img src=" + data.articles[i].urlToImage + "><br/><hr/>" +
+            "<div class=\"title\"><a href=" + data.articles[i].url + "><span style=\"font-size:14px\">" + data.articles[i].title + "</span></a></div>" +
+            //"<p>"+ data.articles[i].description.substr(0,120) +".. </p>"+
+            "</div>";
+        }
       }
     })
 
