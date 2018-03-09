@@ -4,26 +4,27 @@
   <title>New Tab</title>
   <link rel="stylesheet" href="custom.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
-  <div style="position: absolute; z-index:200;" class="fadeOnLoad">  
+  <div style="position: absolute; z-index:200;" class="fadeOnLoad">
     <table>
       <tr>
         <td>
           <div class="newsContainer" id="newsContainer" style="width:0">
-              <div class="news"></div>
+            <div class="news"></div>
           </div>
           <div id="down" style="width:0"><span style="transform:rotate(180deg)">^</span></div>
         </td>
         <td>
           <div id="toggleDiv">
             <div id="NewsToggle" class="toggleButton">></div>
-          </div>          
+          </div>
         </td>
         <td>
           <div class="buttonsGroup">
-            <div id="settings"><img class="gear" src="images\ribbon5.png" alt="settings" ></div> 
+            <div id="settings"><img class="gear" src="images\ribbon5.png" alt="settings"></div>
           </div>
         </td>
       </tr>
@@ -37,13 +38,23 @@
   </div>
   <div class="weatherContainerParent fadeOnLoad">
     <div class="weatherContainer">
-    <div class="city"></div>
-    <div class="icon"></div>
-    <div class="iconDesc"></div>
-    <div class="temp"></div>
+      <div class="weatherColumn wcLeft">
+        <div class="temp"></div>
+      </div>
+      <div class="weatherColumn wcCenter">
+        <div class="icon"></div>
+        <div class="iconDesc"></div>
+      </div>
+      <div class="weatherColumn wcRight">
+        <div class="weatherDetails">
+          <ul>
+          </ul>
+        </div>
+      </div>
+      <div class="city"></div>
+    </div>
   </div>
-</div>
-<div id="divNoteToggle" class="fadeOnLoad" style="right:0vh">
+  <div id="divNoteToggle" class="fadeOnLoad" style="right:0vh">
     <div id="toggleNote" class="btnToggleNote">></div>
   </div>
   <div id="noteTab" class="zennable fadeOnLoad" style="width:0vw">
@@ -56,68 +67,80 @@
   </div>
   <div class='contentContainer'>
     <div class='quote shadowText'></div>
-      <ul class="social-icons fadeOnLoad">
-        <li class='youtube'><a href="https://www.youtube.com/" target="_blank">
+    <ul class="social-icons fadeOnLoad">
+      <li class='youtube'>
+        <a href="https://www.youtube.com/" target="_blank">
           <div id="container">
-              <div id="halfclip">
-                  <div class="halfcircle" id="clipped">
-                  </div>
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
               </div>
-              <div class="halfcircle" id="fixed">
-              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
           </div>
-        </a></li>
-        <li class='facebook'><a href="https://www.facebook.com/" target="_blank">
+        </a>
+      </li>
+      <li class='facebook'>
+        <a href="https://www.facebook.com/" target="_blank">
           <div id="container">
-              <div id="halfclip">
-                  <div class="halfcircle" id="clipped">
-                  </div>
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
               </div>
-              <div class="halfcircle" id="fixed">
-              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
           </div>
-        </a></li>
-        <li class='gmail'><a href="https://gmail.com/" target="_blank">
+        </a>
+      </li>
+      <li class='gmail'>
+        <a href="https://gmail.com/" target="_blank">
           <div id="container">
-              <div id="halfclip">
-                  <div class="halfcircle" id="clipped">
-                  </div>
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
               </div>
-              <div class="halfcircle" id="fixed">
-              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
           </div>
-        </a></li>
-        <li class='twitter'><a href="https://twitter.com/" target="_blank">
+        </a>
+      </li>
+      <li class='twitter'>
+        <a href="https://twitter.com/" target="_blank">
           <div id="container">
-              <div id="halfclip">
-                  <div class="halfcircle" id="clipped">
-                  </div>
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
               </div>
-              <div class="halfcircle" id="fixed">
-              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
           </div>
-        </a></li>
-        <li class='gplus'><a href="https://plus.google.com/" target="_blank">
+        </a>
+      </li>
+      <li class='gplus'>
+        <a href="https://plus.google.com/" target="_blank">
           <div id="container">
-              <div id="halfclip">
-                  <div class="halfcircle" id="clipped">
-                  </div>
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
               </div>
-              <div class="halfcircle" id="fixed">
-              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
           </div>
-        </a></li>
-        <li class='linkedin'><a href="https://linkedin.com/" target="_blank">
+        </a>
+      </li>
+      <li class='linkedin'>
+        <a href="https://linkedin.com/" target="_blank">
           <div id="container">
-              <div id="halfclip">
-                  <div class="halfcircle" id="clipped">
-                  </div>
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
               </div>
-              <div class="halfcircle" id="fixed">
-              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
           </div>
-        </a></li>
-      </ul>
+        </a>
+      </li>
+    </ul>
   </div>
   <!-- <div class="img-title"></div> -->
   <script src="custom.js"></script>
