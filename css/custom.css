@@ -213,11 +213,12 @@ table td {
 }
 
 .card {
-  display: flow-root;
-  background: rgb(245, 245, 245);
-  border-color: rgb(245, 245, 245);
+  display: grid;
+  /* background: rgb(245, 245, 245); */
+  /* border-color: rgb(245, 245, 245); */
   border-radius: 3px;
-  margin-bottom: 10px;
+  margin: 10px 0px;
+  border-top: 1px solid #ccc; 
 }
 
 .card:last-child {
@@ -233,20 +234,21 @@ table td {
 }
 
 .card .title {
-  margin: 15px 15px 10px;
+  padding: 5px 10px;
+  border-left: 7px solid #42a5f5;
+  background: #00000088;
 }
 
 .news {
-  padding: 15px 20px;
-  width: 15vw;
+  padding-bottom: 5vh;
+  width: 18vw;
   /* list-style-type: none; */
 }
 
 .news img {
   width: 100%;
   height: auto;
-  padding: 15px 15px 5px;
-  margin: -15px;
+  border-bottom: 1px solid #fff;
 }
 
 .news p {
@@ -255,8 +257,9 @@ table td {
 }
 
 .news a {
-  font: 10px 'Roboto', sans-serif;
-  color: #000;
+  /* font: 10px 'Roboto', sans-serif; */
+  color: #fff;
+  /* text-shadow: 2px 2px 5px #000; */
   text-decoration: none;
 }
 

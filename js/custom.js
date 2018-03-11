@@ -63,10 +63,14 @@ var beautifulNewTab = (function beautifulNewTab() {
       var newsElem = document.querySelector('.news');
       for (var i = 0; i < 10; i++) {
         if (data.articles[i].urlToImage != null) {
+          var titleFull = data.articles[i].title;
+          if(titleFull.length > 60){
+            titleFull = titleFull.substring(0, 59) + "...";
+          }
           newsElem.innerHTML = newsElem.innerHTML +
             "<div class=\"card\">" +
-            "<img src=" + data.articles[i].urlToImage + "><br/><hr/>" +
-            "<div class=\"title\"><a href=" + data.articles[i].url + "><span style=\"font-size:14px\">" + data.articles[i].title + "</span></a></div>" +
+            "<img src=" + data.articles[i].urlToImage + ">" +
+            "<div class=\"title\"><a href=" + data.articles[i].url + "><span style=\"font-size:2vh\">" + titleFull + "</span></a></div>" +
             //"<p>"+ data.articles[i].description.substr(0,120) +".. </p>"+
             "</div>";
         }
@@ -145,6 +149,7 @@ var beautifulNewTab = (function beautifulNewTab() {
         if (resp.cod != 404) {
           document.getElementById('loactor').style.display = "none";
           document.getElementById('loadingDiv').style.display = "none";
+          document.getElementById('errMsg').innerHTML = "";
           document.getElementById('weatherContainer').style.display = "block";
 
           var cityElem = document.querySelector('.city');
@@ -159,7 +164,8 @@ var beautifulNewTab = (function beautifulNewTab() {
           iconDescElem.innerHTML = weatherCode.main;
           tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
           weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
-        } else {
+        } 
+        else {
           document.getElementById('loadingDiv').style.display = "none";
           document.getElementById('errMsg').innerHTML = "No such location found";
         }
