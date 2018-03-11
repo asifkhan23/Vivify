@@ -96,10 +96,24 @@ var beautifulNewTab = (function beautifulNewTab() {
   //
   //   })
 
+  document.getElementById("resetDiv").addEventListener("click", resetLocation);
+
+  function resetLocation() {
+    chrome.storage.sync.get('location', function(data) {
+      weatherLocation.value = '';
+    });
+    document.getElementById('weatherContainer').style.display = "none";
+    document.getElementById('loactor').style.display = "block";
+  }
+
   chrome.storage.sync.get('location', function(data) {
     weatherLocation.value = data.location ? data.location : '';
     if (weatherLocation.value) {
+      document.getElementById('loactor').style.display = "none";
       fetchWeather();
+    } else {
+      document.getElementById('weatherContainer').style.display = "none";
+      document.getElementById('loactor').style.display = "block";
     }
   });
 
@@ -107,6 +121,7 @@ var beautifulNewTab = (function beautifulNewTab() {
   var weatherLocation = document.getElementById("location");
 
   function setLocation() {
+    document.getElementById('loadingDiv').style.display = "block";
     var weatherLocation = document.getElementById("location");
     chrome.storage.sync.set({
       'location': weatherLocation.value
@@ -127,19 +142,27 @@ var beautifulNewTab = (function beautifulNewTab() {
       })
       .then(function(resp) {
         console.log("resp", resp);
-        var cityElem = document.querySelector('.city');
-        var tempElem = document.querySelector('.temp');
-        var iconDescElem = document.querySelector('.iconDesc');
-        var iconElem = document.querySelector('.icon');
-        var weatherDetails = document.querySelector('.weatherDetails ul');
-        var weatherCode = resp.weather[0];
-        var iconUrl = "http://openweathermap.org/img/w/" + weatherCode.icon + ".png";
-        iconElem.innerHTML = ("<img src='" + iconUrl + "'>");
-        cityElem.innerHTML = resp.name;
-        iconDescElem.innerHTML = weatherCode.main;
-        tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
-        weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
+        if (resp.cod != 404) {
+          document.getElementById('loactor').style.display = "none";
+          document.getElementById('loadingDiv').style.display = "none";
+          document.getElementById('weatherContainer').style.display = "block";
 
+          var cityElem = document.querySelector('.city');
+          var tempElem = document.querySelector('.temp');
+          var iconDescElem = document.querySelector('.iconDesc');
+          var iconElem = document.querySelector('.icon');
+          var weatherDetails = document.querySelector('.weatherDetails ul');
+          var weatherCode = resp.weather[0];
+          var iconUrl = "http://openweathermap.org/img/w/" + weatherCode.icon + ".png";
+          iconElem.innerHTML = ("<img src='" + iconUrl + "'>");
+          cityElem.innerHTML = resp.name;
+          iconDescElem.innerHTML = weatherCode.main;
+          tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
+          weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
+        } else {
+          document.getElementById('loadingDiv').style.display = "none";
+          document.getElementById('errMsg').innerHTML = "No such location found";
+        }
       })
   }
 

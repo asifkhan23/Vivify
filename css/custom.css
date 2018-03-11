@@ -687,3 +687,85 @@ input:checked+.slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
+.locatorDiv {
+  position: absolute;
+  background: rgba(51, 51, 51, 0.5);
+  font: 14px sans-serif;
+  color: #fff;
+  padding: 20px 0px;
+  top: 50%;
+  width: 31vw;
+  height: 17%;
+  text-align: center;
+  margin: 0vw 35vw;
+  box-shadow: 0px 0px 5px #ccc;
+  border-radius: 10px;
+}
+
+#locElements {
+  display: inline-flex;
+  width: 100%;
+  padding: 0% 5%;
+}
+
+#locElements #location {
+  width: 83%;
+  height: 5vh;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  box-shadow: 0 0 0 0 transparent;
+  border: 0;
+  padding: 1vh;
+  min-height: 5vh;
+}
+
+#locElements #saveLocation {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: 0;
+  background-color: #fff;
+  padding: 1vh;
+  cursor: pointer;
+}
+
+#locElements #saveLocation img {
+  height: 3vh;
+}
+
+.loadingParent {
+  width: 100%;
+  padding: 0% 45%;
+}
+
+.Loading {
+  border-radius: 50%;
+  border: 5px solid transparent;
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  width: 4vh;
+  min-width: 20px;
+  height: 4vh;
+  min-height: 20px;
+  animation: turn 2s ease infinite;
+}
+
+@keyframes turn {
+  0% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#resetDiv {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+}
+
+#resetDiv img {
+  height: 3vh;
+  border-radius: 50%;
+}
