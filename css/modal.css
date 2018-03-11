@@ -111,3 +111,8 @@
     opacity: 1
   }
 }
+
+.settings p {
+  width: 70%;
+  float: left;
+}
