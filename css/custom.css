@@ -248,7 +248,7 @@ table td {
 .news img {
   width: 100%;
   height: auto;
-  border-bottom: 1px solid #fff;
+  /* border-bottom: 1px solid #fff; */
 }
 
 .news p {
