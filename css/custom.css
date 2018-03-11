@@ -47,7 +47,7 @@ body {
 }
 
 .leftQuote {
-  background-image: url(images/quote-left.svg);
+  background-image: url(../images/quote-left.svg);
   background-size: 10px;
   width: 10px;
   height: 10px;
@@ -57,7 +57,7 @@ body {
 }
 
 .rightQuote {
-  background-image: url(images/right-quotation-mark.svg);
+  background-image: url(../images/right-quotation-mark.svg);
   background-size: 10px;
   width: 10px;
   height: 10px;
@@ -67,7 +67,7 @@ body {
 }
 
 .editIcon {
-  background-image: url(images/gearIcon.png);
+  background-image: url(../images/gearIcon.png);
   background-size: 15px;
   width: 15px;
   height: 15px;
@@ -287,7 +287,7 @@ table td {
   cursor: pointer;
   /* border-top-right-radius: 50px;
     border-bottom-right-radius: 50px; */
-  background-image: url(images/news-icon.png);
+  background-image: url(../images/news-icon.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -315,7 +315,7 @@ table td {
   border-radius: 50px;
   position: absolute;
   right: 18vw;
-  background-image: url(images/check-mark.png);
+  background-image: url(../images/check-mark.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
@@ -359,32 +359,32 @@ ul.social-icons li a {
 }
 
 ul.social-icons li.youtube {
-  background: url(images/yt.svg);
+  background: url(../images/yt.svg);
   background-size: 30px 30px;
 }
 
 ul.social-icons li.facebook {
-  background: url(images/fb.svg);
+  background: url(../images/fb.svg);
   background-size: 30px 30px;
 }
 
 ul.social-icons li.twitter {
-  background: url(images/twitter.svg);
+  background: url(../images/twitter.svg);
   background-size: 30px 30px;
 }
 
 ul.social-icons li.gmail {
-  background: url(images/gmail.svg);
+  background: url(../images/gmail.svg);
   background-size: 30px 30px;
 }
 
 ul.social-icons li.gplus {
-  background: url(images/gplus.svg);
+  background: url(../images/gplus.svg);
   background-size: 30px 30px;
 }
 
 ul.social-icons li.linkedin {
-  background: url(images/linkedin.svg);
+  background: url(../images/linkedin.svg);
   background-size: 30px 30px;
 }
 

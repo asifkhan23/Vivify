@@ -2,7 +2,8 @@
 
 <head>
   <title>New Tab</title>
-  <link rel="stylesheet" href="custom.css">
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/modal.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
@@ -30,6 +31,27 @@
       </tr>
     </table>
   </div>
+  <button id="myBtn">Open Modal</button>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Modal Header</h2>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the Modal Body</p>
+        <p>Some other text...</p>
+      </div>
+      <div class="modal-footer">
+        <h3>Modal Footer</h3>
+      </div>
+    </div>
+
+  </div>
   <div class="dateTime">
     <div class="dateContainer">
       <div class="date shadowText"></div>
@@ -39,7 +61,7 @@
   <div class="weatherContainerParent fadeOnLoad">
     <div class="weatherContainer">
       <div class="weatherLocation">
-        <input type="text" id="location"/>
+        <input type="text" id="location" />
         <button id="saveLocation">SAVE</button>
       </div>
       <div class="weatherColumn">
@@ -147,7 +169,8 @@
     </ul>
   </div>
   <!-- <div class="img-title"></div> -->
-  <script src="custom.js"></script>
+  <script src="js/custom.js"></script>
+  <script src="js/modal.js"></script>
 </body>
 
 </html>
