@@ -28,9 +28,11 @@
 
 .modal-content {
   position: fixed;
-  top: 0px;
+  top: 25%;
+  left: 30%;
+  right: 30%;
   background-color: #fefefe;
-  width: 100%;
+  /* width: 100%; */
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
@@ -54,7 +56,7 @@
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #5cb85c;
+  background: linear-gradient(40deg, #2096ff, #05ffa3);
   color: white;
 }
 
