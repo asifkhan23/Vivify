@@ -3,7 +3,7 @@
 <head>
   <title>New Tab</title>
   <link rel="stylesheet" href="css/custom.css">
-  <link rel="stylesheet" href="css/modal.css">
+  <link rel="stylesheet" href="css/settings.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
@@ -55,6 +55,13 @@
           </label>
         </div>
         <div class="settings">
+          <p>Show Social Icons</p>
+          <label class="switch">
+            <input id="toggleSocial" type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="settings">
           <p>Show Quotes</p>
           <label class="switch">
             <input id="toggleQuote" type="checkbox" checked>
@@ -62,10 +69,14 @@
           </label>
         </div>
         <div class="settings">
-          <p>Show Social Icons</p>
-          <label class="switch">
-            <input id="toggleSocial" type="checkbox" checked>
-            <span class="slider round"></span>
+          <p>Type of Quotes</p>
+          <label class="radioContainer">Famous
+            <input type="radio" checked="checked" name="radioQuote" value="famous">
+            <span class="checkmark"></span>
+          </label>
+          <label class="radioContainer">Movies
+            <input type="radio" name="radioQuote" value="movies">
+            <span class="checkmark"></span>
           </label>
         </div>
       </div>
@@ -204,7 +215,7 @@
   </div>
   <!-- <div class="img-title"></div> -->
   <script src="js/custom.js"></script>
-  <script src="js/modal.js"></script>
+  <script src="js/settings.js"></script>
 </body>
 
 </html>

@@ -148,3 +148,7 @@ toggleSocial.addEventListener('click', function() {
     });
   }
 });
+
+//Settings For Quote Type Selection
+var radioQuote = document.querySelector('input[name="radioQuote"]:checked');
+console.log(radioQuote.value);
