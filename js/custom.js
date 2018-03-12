@@ -2,8 +2,8 @@ var beautifulNewTab = (function beautifulNewTab() {
 
   var QUOTES_API_OLD = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
   var IMAGE_API = "https://source.unsplash.com/random";
-  var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
   var WEATHER_API_OLD = "http://api.openweathermap.org/data/2.5/weather?q=dubai&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657"
+  
   var myHeaders = new Headers({
     "Content-Type": "application/x-www-form-urlencoded",
     "Accept": "application/json",
@@ -55,28 +55,7 @@ var beautifulNewTab = (function beautifulNewTab() {
       imageElem.style.backgroundImage = "url(" + resp.url + ")";
     })
 
-  // fetch News
-  var req = new Request(NEWS_API);
-  fetch(req)
-    .then(data => data.json())
-    .then(data => {
-      var newsElem = document.querySelector('.news');
-      for (var i = 0; i < 10; i++) {
-        if (data.articles[i].urlToImage != null) {
-          var titleFull = data.articles[i].title;
-          if (titleFull.length > 60) {
-            titleFull = titleFull.substring(0, 59) + "...";
-          }
-          newsElem.innerHTML = newsElem.innerHTML +
-            "<div class=\"card\">" +
-            "<img src=" + data.articles[i].urlToImage + ">" +
-            "<div class=\"title\"><a href=" + data.articles[i].url + "><span style=\"font-size:2vh\">" + titleFull + "</span></a></div>" +
-            //"<p>"+ data.articles[i].description.substr(0,120) +".. </p>"+
-            "</div>";
-        }
-      }
-    })
-
+  
   document.getElementById("resetDiv").addEventListener("click", resetLocation);
 
   function resetLocation() {
@@ -193,32 +172,7 @@ var beautifulNewTab = (function beautifulNewTab() {
 
 })();
 
-document.getElementById("toggleDiv").addEventListener("click", displayNews);
 document.getElementById("divNoteToggle").addEventListener("click", displayNote);
-
-function displayNews() {
-  if (document.getElementById("NewsToggle").innerText == "<") {
-    document.getElementById("newsContainer").style.transition = "width 0.25s";
-    document.getElementById("down").style.transition = "width 0.25s";
-    //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-in"
-
-    document.getElementById("newsContainer").style.width = "0vw";
-    document.getElementById("down").style.width = "0vw";
-
-    document.getElementById("newsContainer").style.boxShadow = "box-shadow: 0px 0px 0px transparent";
-    document.getElementById("NewsToggle").innerText = ">";
-  } else {
-    document.getElementById("newsContainer").style.transition = "width 0.5s";
-    document.getElementById("down").style.transition = "width 0.5s";
-    //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-out"
-
-    document.getElementById("newsContainer").style.width = "18vw";
-    document.getElementById("down").style.width = "100%";
-
-    document.getElementById("newsContainer").style.boxShadow = "box-shadow: 1px 1px 5px #555";
-    document.getElementById("NewsToggle").innerText = "<";
-  }
-}
 
 function displayNote() {
   if (document.getElementById("toggleNote").innerText == "<") {
@@ -235,13 +189,6 @@ function displayNote() {
     document.getElementById("toggleNote").innerText = "<";
   }
 }
-
-document.getElementById("down").addEventListener("mousedown", scrollNews);
-
-function scrollNews() {
-  document.getElementsByClassName("newsContainer").scrollTop = +10;
-}
-
 
 //Text Area Fucntion
 

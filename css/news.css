@@ -1,0 +1,127 @@
+
+.newsContainer {
+    background: rgba(117, 117, 117, 0.4);
+    display: inline-block;
+    overflow: auto;
+    max-height: 100vh;
+    height: 100vh;
+    margin: 0;
+    box-shadow: 1px 1px 5px #555;
+  }
+  
+  .newsContainer::-webkit-scrollbar {
+    width: 0px;
+    background-color: #F5F5F5;
+  }
+  
+  .card {
+    display: grid;
+    /* background: rgb(245, 245, 245); */
+    /* border-color: rgb(245, 245, 245); */
+    border-radius: 3px;
+    margin: 10px 0px;
+    border-top: 1px solid #ccc;
+  }
+  
+  .card:last-child {
+    margin-bottom: 0px;
+  }
+  
+  .card hr {
+    margin-top: 10px;
+    height: 3px;
+    background-color: #E53935;
+    /*background-color: #00A2E0;*/
+    margin-bottom: -5px;
+  }
+  
+  .card .title {
+    padding: 5px 10px;
+    border-left: 7px solid #42a5f5;
+    background: #00000088;
+  }
+  
+  .news {
+    padding-bottom: 5vh;
+    width: 18vw;
+    /* list-style-type: none; */
+  }
+  
+  .news img {
+    width: 100%;
+    height: auto;
+    /* border-bottom: 1px solid #fff; */
+  }
+  
+  .news p {
+    padding: 0px 15px;
+    word-wrap: break-word;
+  }
+  
+  .news a {
+    /* font: 10px 'Roboto', sans-serif; */
+    color: #fff;
+    /* text-shadow: 2px 2px 5px #000; */
+    text-decoration: none;
+  }
+  
+  .toggleButton {
+    color: transparent;
+    font-size: 0px;
+    /* color: #FFFFFF;
+      text-shadow: 4px 1px 4px #212121;
+      height: 100%;
+      line-height: 35px; */
+  }
+  
+  /* #toggleDiv2{
+      height: 0;
+      width: 0;
+      padding: 0px 4px;
+      cursor: pointer;
+      border-top: 20px solid transparent;
+      border-bottom: 20px solid transparent;
+      border-left: 20px solid red;
+  } */
+  
+  #toggleDiv {
+    background: #ffffff;
+    height: 30px;
+    width: 30px;
+    /* padding: 0px 4px; */
+    cursor: pointer;
+    /* border-top-right-radius: 50px;
+      border-bottom-right-radius: 50px; */
+    background-image: url(../images/news-icon.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    /* box-shadow: 1px 1px 10px #666;
+      border: 1px solid #fff; */
+    border-radius: 50px;
+    /* width: 30px;
+      margin-left: -17px; */
+    margin-top: -49.2vh;
+    margin-left: 0.8vh;
+    /* box-shadow: inset 1px 1px 10px #666; */
+  }
+  
+  #toggleDiv:hover {
+    box-shadow: inset 1px 1px 10px transparent;
+  }
+  #down {
+    width: 100%;
+    text-align: center;
+    line-height: 4vh;
+    height: 7vh;
+    color: #fff;
+    background: linear-gradient(#000, transparent);
+    margin-top: -7vh;
+    transform: rotate(180deg);
+    cursor: pointer;
+  }
+  
+  #down:active {
+    box-shadow: inset 1px 1px 10px #666
+  }
+  
