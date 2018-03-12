@@ -30,11 +30,11 @@ var toggleWeather = document.getElementById('toggleWeather');
 chrome.storage.sync.get('toggleWeatherValue', function(data) {
   var showWeather = data.toggleWeatherValue ? data.toggleWeatherValue : false;
   if (showWeather) {
-    document.getElementById('toggleWeather').checked = true;
-    document.getElementById('weatherContainer').classList.remove("customHide");
+    toggleWeather.checked = true;
+    weatherContainer.classList.remove("customHide");
   } else {
-    document.getElementById('toggleWeather').checked = false;
-    document.getElementById('weatherContainer').classList.add("customHide");
+    toggleWeather.checked = false;
+    weatherContainer.classList.add("customHide");
   }
 });
 
@@ -43,13 +43,13 @@ toggleWeather.addEventListener('click', function() {
     chrome.storage.sync.set({
       'toggleWeatherValue': true
     }, function() {
-      document.getElementById('weatherContainer').classList.remove("customHide");
+      weatherContainer.classList.remove("customHide");
     });
   } else {
     chrome.storage.sync.set({
       'toggleWeatherValue': false
     }, function() {
-      document.getElementById('weatherContainer').classList.add("customHide");
+      weatherContainer.classList.add("customHide");
     });
   }
 });
@@ -57,16 +57,17 @@ toggleWeather.addEventListener('click', function() {
 // Settings Notes Toggle
 var noteTab = document.getElementById('noteTab');
 var toggleNotes = document.getElementById('toggleNotes');
+var divNoteToggle = document.getElementById('divNoteToggle');
 chrome.storage.sync.get('toggleNotesValue', function(data) {
   var showNotes = data.toggleNotesValue ? data.toggleNotesValue : false;
   if (showNotes) {
-    document.getElementById('toggleNotes').checked = true;
-    document.getElementById('noteTab').classList.remove("customHide");
-    document.getElementById('divNoteToggle').classList.remove("customHide");
+    toggleNotes.checked = true;
+    noteTab.classList.remove("customHide");
+    divNoteToggle.classList.remove("customHide");
   } else {
-    document.getElementById('toggleNotes').checked = false;
-    document.getElementById('noteTab').classList.add("customHide");
-    document.getElementById('divNoteToggle').classList.add("customHide");
+    toggleNotes.checked = false;
+    noteTab.classList.add("customHide");
+    divNoteToggle.classList.add("customHide");
   }
 });
 
@@ -75,30 +76,30 @@ toggleNotes.addEventListener('click', function() {
     chrome.storage.sync.set({
       'toggleNotesValue': true
     }, function() {
-      document.getElementById('noteTab').classList.remove("customHide");
-      document.getElementById('divNoteToggle').classList.remove("customHide");
+      noteTab.classList.remove("customHide");
+      divNoteToggle.classList.remove("customHide");
     });
   } else {
     chrome.storage.sync.set({
       'toggleNotesValue': false
     }, function() {
-      document.getElementById('noteTab').classList.add("customHide");
-      document.getElementById('divNoteToggle').classList.add("customHide");
+      noteTab.classList.add("customHide");
+      divNoteToggle.classList.add("customHide");
     });
   }
 });
 
 // Settings Quote Toggle
-var quote = document.getElementById('quoteContainer');
+var quoteContainer = document.getElementById('quoteContainer');
 var toggleQuote = document.getElementById('toggleQuote');
 chrome.storage.sync.get('toggleQuoteValue', function(data) {
   var showQuote = data.toggleQuoteValue ? data.toggleQuoteValue : false;
   if (showQuote) {
     toggleQuote.checked = true;
-    quote.classList.remove("customHide");
+    quoteContainer.classList.remove("customHide");
   } else {
     toggleQuote.checked = false;
-    quote.classList.add("customHide");
+    quoteContainer.classList.add("customHide");
   }
 });
 
@@ -107,13 +108,43 @@ toggleQuote.addEventListener('click', function() {
     chrome.storage.sync.set({
       'toggleQuoteValue': true
     }, function() {
-      quote.classList.remove("customHide");
+      quoteContainer.classList.remove("customHide");
     });
   } else {
     chrome.storage.sync.set({
       'toggleQuoteValue': false
     }, function() {
-      quote.classList.add("customHide");
+      quoteContainer.classList.add("customHide");
+    });
+  }
+});
+
+// Settings Social Icons Toggle
+var socialContainer = document.getElementById('socialContainer');
+var toggleSocial = document.getElementById('toggleSocial');
+chrome.storage.sync.get('toggleSocialValue', function(data) {
+  var showSocialIcons = data.toggleSocialValue ? data.toggleSocialValue : false;
+  if (showSocialIcons) {
+    toggleSocial.checked = true;
+    socialContainer.classList.remove("customHide");
+  } else {
+    toggleSocial.checked = false;
+    socialContainer.classList.add("customHide");
+  }
+});
+
+toggleSocial.addEventListener('click', function() {
+  if (toggleSocial.checked === true) {
+    chrome.storage.sync.set({
+      'toggleSocialValue': true
+    }, function() {
+      socialContainer.classList.remove("customHide");
+    });
+  } else {
+    chrome.storage.sync.set({
+      'toggleSocialValue': false
+    }, function() {
+      socialContainer.classList.add("customHide");
     });
   }
 });
