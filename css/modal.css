@@ -62,7 +62,7 @@
 }
 
 .modal-body {
-  padding: 2px 16px;
+  padding: 10px 16px;
 }
 
 .modal-footer {
@@ -111,6 +111,10 @@
   to {
     opacity: 1
   }
+}
+
+.settings {
+  padding-bottom: 10px;
 }
 
 .settings p {

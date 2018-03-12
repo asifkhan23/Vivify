@@ -23,6 +23,8 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+//Settings Weather Toggle
 var weatherContainer = document.getElementById('weatherContainer');
 var toggleWeather = document.getElementById('toggleWeather');
 chrome.storage.sync.get('toggleWeatherValue', function(data) {
@@ -48,6 +50,40 @@ toggleWeather.addEventListener('click', function() {
       'toggleWeatherValue': false
     }, function() {
       document.getElementById('weatherContainer').classList.add("customHide");
+    });
+  }
+});
+
+// Settings Notes Toggle
+var noteTab = document.getElementById('noteTab');
+var toggleNotes = document.getElementById('toggleNotes');
+chrome.storage.sync.get('toggleNotesValue', function(data) {
+  var showNotes = data.toggleNotesValue ? data.toggleNotesValue : false;
+  if (showNotes) {
+    document.getElementById('toggleNotes').checked = true;
+    document.getElementById('noteTab').classList.remove("customHide");
+    document.getElementById('divNoteToggle').classList.remove("customHide");
+  } else {
+    document.getElementById('toggleNotes').checked = false;
+    document.getElementById('noteTab').classList.add("customHide");
+    document.getElementById('divNoteToggle').classList.add("customHide");
+  }
+});
+
+toggleNotes.addEventListener('click', function() {
+  if (toggleNotes.checked === true) {
+    chrome.storage.sync.set({
+      'toggleNotesValue': true
+    }, function() {
+      document.getElementById('noteTab').classList.remove("customHide");
+      document.getElementById('divNoteToggle').classList.remove("customHide");
+    });
+  } else {
+    chrome.storage.sync.set({
+      'toggleNotesValue': false
+    }, function() {
+      document.getElementById('noteTab').classList.add("customHide");
+      document.getElementById('divNoteToggle').classList.add("customHide");
     });
   }
 });
