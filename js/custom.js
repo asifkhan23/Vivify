@@ -149,18 +149,17 @@ var beautifulNewTab = (function beautifulNewTab() {
   //fetch Quote
   var radioQuote = document.querySelector('input[name="radioQuote"]:checked');
   chrome.storage.sync.get('quoteType', function(data) {
-    radioQuote = data.quoteType ? data.quoteType : '';
-    if (radioQuote == "movies") {
-      document.getElementsByName("radioQuote")[1].checked = true;
-    } else {
+    radioQuote = data.quoteType ? data.quoteType : 'famous';
+    if (radioQuote == "famous") {
       document.getElementsByName("radioQuote")[0].checked = true;
+    } else {
+      document.getElementsByName("radioQuote")[1].checked = true;
     }
     fetchQuotes();
   });
   document.getElementsByName("radioQuote")[0].addEventListener("click", setQuoteTypeFamous);
 
   function setQuoteTypeFamous() {
-    console.log("test");
     chrome.storage.sync.set({
       'quoteType': "famous"
     }, function() {
@@ -172,7 +171,6 @@ var beautifulNewTab = (function beautifulNewTab() {
   document.getElementsByName("radioQuote")[1].addEventListener("click", setQuoteTypeMovies);
 
   function setQuoteTypeMovies() {
-    console.log("mov");
     chrome.storage.sync.set({
       'quoteType': "movies"
     }, function() {
