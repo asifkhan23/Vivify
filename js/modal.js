@@ -87,3 +87,33 @@ toggleNotes.addEventListener('click', function() {
     });
   }
 });
+
+// Settings Quote Toggle
+var quote = document.getElementById('quoteContainer');
+var toggleQuote = document.getElementById('toggleQuote');
+chrome.storage.sync.get('toggleQuoteValue', function(data) {
+  var showQuote = data.toggleQuoteValue ? data.toggleQuoteValue : false;
+  if (showQuote) {
+    toggleQuote.checked = true;
+    quote.classList.remove("customHide");
+  } else {
+    toggleQuote.checked = false;
+    quote.classList.add("customHide");
+  }
+});
+
+toggleQuote.addEventListener('click', function() {
+  if (toggleQuote.checked === true) {
+    chrome.storage.sync.set({
+      'toggleQuoteValue': true
+    }, function() {
+      quote.classList.remove("customHide");
+    });
+  } else {
+    chrome.storage.sync.set({
+      'toggleQuoteValue': false
+    }, function() {
+      quote.classList.add("customHide");
+    });
+  }
+});
