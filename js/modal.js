@@ -1,4 +1,3 @@
-var toggleWeather = document.getElementById('toggleWeather');
 // Get the modal
 var modal = document.getElementById('myModal');
 
@@ -25,16 +24,13 @@ window.onclick = function(event) {
   }
 }
 var weatherContainer = document.getElementById('weatherContainer');
+var toggleWeather = document.getElementById('toggleWeather');
 chrome.storage.sync.get('toggleWeatherValue', function(data) {
   var showWeather = data.toggleWeatherValue ? data.toggleWeatherValue : false;
-  console.log(showWeather);
-
   if (showWeather) {
-    console.log("inside if");
     document.getElementById('toggleWeather').checked = true;
     document.getElementById('weatherContainer').classList.remove("customHide");
   } else {
-    console.log("inside else");
     document.getElementById('toggleWeather').checked = false;
     document.getElementById('weatherContainer').classList.add("customHide");
   }
