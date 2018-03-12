@@ -64,7 +64,7 @@ var beautifulNewTab = (function beautifulNewTab() {
       for (var i = 0; i < 10; i++) {
         if (data.articles[i].urlToImage != null) {
           var titleFull = data.articles[i].title;
-          if(titleFull.length > 60){
+          if (titleFull.length > 60) {
             titleFull = titleFull.substring(0, 59) + "...";
           }
           newsElem.innerHTML = newsElem.innerHTML +
@@ -141,11 +141,9 @@ var beautifulNewTab = (function beautifulNewTab() {
     WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=" + weatherLocation.value + "&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657";
     fetch(WEATHER_API)
       .then(function(response) {
-        console.log(response);
         return response.json();
       })
       .then(function(resp) {
-        console.log("resp", resp);
         if (resp.cod != 404) {
           document.getElementById('loactor').style.display = "none";
           document.getElementById('loadingDiv').style.display = "none";
@@ -164,8 +162,7 @@ var beautifulNewTab = (function beautifulNewTab() {
           iconDescElem.innerHTML = weatherCode.main;
           tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
           weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
-        } 
-        else {
+        } else {
           document.getElementById('loadingDiv').style.display = "none";
           document.getElementById('errMsg').innerHTML = "No such location found";
         }
