@@ -36,7 +36,8 @@
   -webkit-animation-name: slideIn;
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
-  animation-duration: 0.4s
+  animation-duration: 0.4s;
+  height: 200px;
 }
 
 /* The Close Button */
@@ -115,4 +116,8 @@
 .settings p {
   width: 70%;
   float: left;
+}
+
+.customHide {
+  display: none !important;
 }
