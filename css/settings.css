@@ -38,6 +38,7 @@
   animation-name: slideIn;
   animation-duration: 0.4s;
   height: 300px;
+  border-radius: 20px;
 }
 
 /* The Close Button */
@@ -59,6 +60,8 @@
   padding: 2px 16px;
   background: linear-gradient(40deg, #2096ff, #05ffa3);
   color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
 .modal-body {

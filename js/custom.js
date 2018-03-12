@@ -1,6 +1,6 @@
 var beautifulNewTab = (function beautifulNewTab() {
 
-  var QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
+  var QUOTES_API_OLD = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
   var IMAGE_API = "https://source.unsplash.com/random";
   var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
   var WEATHER_API_OLD = "http://api.openweathermap.org/data/2.5/weather?q=dubai&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657"
