@@ -86,24 +86,26 @@
   
   #toggleDiv {
     background: #ffffff;
+    position: absolute;
     height: 30px;
     width: 30px;
-    /* padding: 0px 4px; */
+    margin: 5px;
     cursor: pointer;
-    /* border-top-right-radius: 50px;
-      border-bottom-right-radius: 50px; */
     background-image: url(../images/news-icon.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    /* box-shadow: 1px 1px 10px #666;
-      border: 1px solid #fff; */
     border-radius: 50px;
-    /* width: 30px;
-      margin-left: -17px; */
-    margin-top: -49.2vh;
-    margin-left: 0.8vh;
-    /* box-shadow: inset 1px 1px 10px #666; */
+    margin-left: 7vh;
+    
+    /* box-shadow: inset 1px 1px 10px #666; 
+    width: 30px;
+    margin-left: -17px; */
+    /* box-shadow: 1px 1px 10px #666;
+    border: 1px solid #fff; 
+      border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px; 
+    padding: 0px 4px; */
   }
   
   #toggleDiv:hover {
@@ -125,3 +127,20 @@
     box-shadow: inset 1px 1px 10px #666
   }
   
+  .closeNews{
+    top: 0;
+    right: 0;
+    margin: 5px;
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    /* padding: 5px; */
+  }
+
+  .closeNews img{
+    height: 80%;
+    width: 80%;
+    padding: 10%;
+  }

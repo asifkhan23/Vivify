@@ -10,27 +10,24 @@
 </head>
 
 <body>
-  <div style="position: absolute; z-index:200;" class="fadeOnLoad">
-    <table>
-      <tr>
-        <td>
-          <div class="newsContainer" id="newsContainer" style="width:0">
-            <div class="news"></div>
-          </div>
-          <div id="down" style="width:0"><span style="transform:rotate(180deg)">^</span></div>
-        </td>
-        <td>
-          <div id="toggleDiv">
-            <div id="NewsToggle" class="toggleButton">></div>
-          </div>
-        </td>
-        <td>
-          <div class="buttonsGroup">
-            <div id="settings"><img class="gear" src="images\ribbon5.png" alt="settings"></div>
-          </div>
-        </td>
-      </tr>
-    </table>
+  <div class="buttonsGroup">
+    <div id="settings">
+      <img class="gear" src="images\ribbon5.png" alt="settings"/>
+    </div>
+    <div id="toggleDiv">
+      <div id="NewsToggle" class="toggleButton">></div>
+    </div>
+  </div>
+  <div id="newsContainerParent" style="position: absolute; z-index:200;width:0;background: #2096ff;" class="fadeOnLoad">
+    <div class="newsContainer" id="newsContainer" style="width:0">
+      <div class="news"></div>
+    </div>
+    <div id="down" style="width:0">
+      <span style="transform:rotate(180deg)">^</span>
+    </div>
+    <div id="collapseNews" class="closeNews">
+      <img src="./images/close.png" alt="close"/>
+    </div>
   </div>
   <!-- The Modal -->
   <div id="myModal" class="modal">

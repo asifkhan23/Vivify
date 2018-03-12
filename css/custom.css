@@ -392,9 +392,9 @@ label[for=comment] {
   cursor: pointer;
 }
 
-.buttonsGroup {
+/* .buttonsGroup {
   margin-top: -50vh;
-}
+} */
 
 
 .fadeOnLoad {
