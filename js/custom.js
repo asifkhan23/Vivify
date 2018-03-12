@@ -77,29 +77,6 @@ var beautifulNewTab = (function beautifulNewTab() {
       }
     })
 
-  //fetch Weather
-
-  // fetch(WEATHER_API_OLD)
-  //   .then(function(response) {
-  //     return response.json();
-  //   })
-  //   .then(function(resp) {
-  //     console.log("resp", resp);
-  //     var cityElem = document.querySelector('.city');
-  //     var tempElem = document.querySelector('.temp');
-  //     var iconDescElem = document.querySelector('.iconDesc');
-  //     var iconElem = document.querySelector('.icon');
-  //     var weatherDetails = document.querySelector('.weatherDetails ul');
-  //     var weatherCode = resp.weather[0];
-  //     var iconUrl = "http://openweathermap.org/img/w/" + weatherCode.icon + ".png";
-  //     iconElem.innerHTML = ("<img src='" + iconUrl + "'>");
-  //     cityElem.innerHTML = resp.name;
-  //     iconDescElem.innerHTML = weatherCode.main;
-  //     tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
-  //     weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
-  //
-  //   })
-
   document.getElementById("resetDiv").addEventListener("click", resetLocation);
 
   function resetLocation() {
@@ -170,14 +147,52 @@ var beautifulNewTab = (function beautifulNewTab() {
   }
 
   //fetch Quote
-  fetch(QUOTES_API, init)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(resp) {
-      var quoteElm = document.querySelector('.quote');
-      quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quote + "</p> <span class='rightQuote'></span><br> - " + resp.author;
-    })
+  var radioQuote = document.querySelector('input[name="radioQuote"]:checked');
+  chrome.storage.sync.get('quoteType', function(data) {
+    radioQuote = data.quoteType ? data.quoteType : '';
+    if (radioQuote == "movies") {
+      document.getElementsByName("radioQuote")[1].checked = true;
+    } else {
+      document.getElementsByName("radioQuote")[0].checked = true;
+    }
+    fetchQuotes();
+  });
+  document.getElementsByName("radioQuote")[0].addEventListener("click", setQuoteTypeFamous);
+
+  function setQuoteTypeFamous() {
+    console.log("test");
+    chrome.storage.sync.set({
+      'quoteType': "famous"
+    }, function() {
+      radioQuote = "famous";
+      fetchQuotes();
+    });
+  }
+
+  document.getElementsByName("radioQuote")[1].addEventListener("click", setQuoteTypeMovies);
+
+  function setQuoteTypeMovies() {
+    console.log("mov");
+    chrome.storage.sync.set({
+      'quoteType': "movies"
+    }, function() {
+      radioQuote = "movies";
+      fetchQuotes();
+    });
+  }
+
+  function fetchQuotes() {
+    QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + radioQuote;
+    fetch(QUOTES_API, init)
+      .then(function(response) {
+        return response.json();
+      })
+      .then(function(resp) {
+        var quoteElm = document.querySelector('.quote');
+        quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quote + "</p> <span class='rightQuote'></span><br> - " + resp.author;
+      })
+  }
+
 })();
 
 document.getElementById("toggleDiv").addEventListener("click", displayNews);
