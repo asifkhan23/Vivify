@@ -2,7 +2,7 @@
     position: absolute; 
     z-index:200;
     width:0;
-    background: #fff;
+    background: #fffa;
 }
 .newsContainer {
     /*background: rgba(117, 117, 117, 0.4);*/
@@ -48,7 +48,7 @@
     .card .title {
         padding: 5px 10px;
         border-left: 7px solid #42a5f5;
-        background: #00000088;
+        background: #333;
     }
 
 .news {
