@@ -1,233 +1,233 @@
 <html>
 
 <head>
-    <title>New Tab</title>
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/settings.css">
-    <link rel="stylesheet" href="css/news.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <title>New Tab</title>
+  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="css/settings.css">
+  <link rel="stylesheet" href="css/news.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
 <body>
-    <div class="buttonsGroup">
-        <div id="settings">
-            <img class="gear" src="images\ribbon5.png" alt="settings" />
-        </div>
-        <div id="toggleDiv">
-            <div id="NewsToggle" class="toggleButton"></div>
-        </div>
+  <div class="buttonsGroup">
+    <div id="settings">
+      <img class="gear" src="images\ribbon5.png" alt="settings" />
     </div>
-    <div id="newsContainerParent" class="newsContainerParentDiv fadeOnLoad">
-        <div class="newsContainer" id="newsContainer" style="width:0">
-            <div class="news flexrow"></div>
-        </div>
-        <div id="down" style="width:0">
-            <span style="transform:rotate(180deg)">^</span>
-        </div>
-        <div id="collapseNews" class="closeNews">
-            <img src="./images/close.png" alt="close" />
-        </div>
+    <div id="toggleDiv">
+      <div id="NewsToggle" class="toggleButton"></div>
     </div>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">&times;</span>
-                <h2>Settings</h2>
+  </div>
+  <div id="newsContainerParent" class="newsContainerParentDiv fadeOnLoad">
+    <div class="newsContainer" id="newsContainer" style="width:0">
+      <div class="news flexrow"></div>
+    </div>
+    <div id="down" style="width:0">
+      <span style="transform:rotate(180deg)">^</span>
+    </div>
+    <div id="collapseNews" class="closeNews">
+      <img src="./images/close.png" alt="close" />
+    </div>
+  </div>
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Settings</h2>
+      </div>
+      <div class="modal-body">
+        <div class="settings">
+          <p>Show Weather</p>
+          <label class="switch">
+            <input id="toggleWeather" type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <div class="settings">
+          <p>Weather Location</p>
+          <div id="locElements">
+            <input type="text" placeholder="Enter your location" id="location" />
+            <div class="searchButtonDiv" style="display: inline-block;">
+              <div id="saveLocation">
+                <img src="../images/search.png" alt="Go">
+              </div>
             </div>
-            <div class="modal-body">
-                <div class="settings">
-                    <p>Show Weather</p>
-                    <label class="switch">
-                        <input id="toggleWeather" type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="settings">
-                    <p>Weather Location</p>
-                    <div id="locElements">
-                      <input type="text" placeholder="Enter your location" id="location" />
-                      <div class="searchButtonDiv" style="display: inline-block;">
-                        <div id="saveLocation">
-                          <img src="../images/search.png" alt="Go">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <div class="settings">
-                    <p>Show Notes</p>
-                    <label class="switch">
-                        <input id="toggleNotes" type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="settings">
-                    <p>Show Social Icons</p>
-                    <label class="switch">
-                        <input id="toggleSocial" type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="settings">
-                    <p>Show Quotes</p>
-                    <label class="switch">
-                        <input id="toggleQuote" type="checkbox" checked>
-                        <span class="slider round"></span>
-                    </label>
-                </div>
-                <div class="settings">
-                    <p>Type of Quotes</p>
-                    <label class="radioContainer">
-                        Famous
-                        <input type="radio" checked="checked" name="radioQuote" value="famous">
-                        <span class="checkmark"></span>
-                    </label>
-                    <label class="radioContainer">
-                        Movies
-                        <input type="radio" name="radioQuote" value="movies">
-                        <span class="checkmark"></span>
-                    </label>
-                </div>
-            </div>
-            <!-- <div class="modal-footer">
-              <h3>Modal Footer</h3>
-            </div> -->
+          </div>
         </div>
-    </div>
-    <div class="dateTime">
-        <div class="dateContainer">
-            <div class="date shadowText"></div>
+        <div class="settings">
+          <p>Show Notes</p>
+          <label class="switch">
+            <input id="toggleNotes" type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
         </div>
-        <div class="time shadowText"></div>
-    </div>
-    <div class="weatherContainerParent fadeOnLoad">
-        <div id="loactor" class="locatorDiv">
-            <div id="locElements">
-                <input type="text" placeholder="Enter your location" id="location" />
-                <div class="searchButtonDiv">
-                    <div id="saveLocation">
-                        <img src="../images/search.png" alt="Go">
-                    </div>
-                </div>
-            </div>
-            <div id="errMsgDiv">
-                <p id="errMsg"></p>
-                <div id="loadingDiv" class="loadingParent" style="opacity:0;">
-                    <div class="loading"></div>
-                </div>
-            </div>
+        <div class="settings">
+          <p>Show Social Icons</p>
+          <label class="switch">
+            <input id="toggleSocial" type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
         </div>
-        <div id="weatherContainer" class="weatherContainer">
-            <div class="weatherColumn">
-                <div class="temp"></div>
-            </div>
-            <div class="weatherColumn wcCenter">
-                <div class="iconDesc"></div>
-                <div class="icon"></div>
-                <div class="city"></div>
-            </div>
-            <div class="weatherColumn">
-                <div id="resetDiv"><img src="../images/reset2.jpg" /></div>
-                <div class="weatherDetails">
-                    <ul></ul>
-                </div>
-            </div>
+        <div class="settings">
+          <p>Show Quotes</p>
+          <label class="switch">
+            <input id="toggleQuote" type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
         </div>
-    </div>
-    <div id="divNoteToggle" class="fadeOnLoad" style="right:0vh">
-        <div id="toggleNote" class="btnToggleNote">></div>
-    </div>
-    <div id="noteTab" class="zennable fadeOnLoad" style="width:0vw">
-        <div class="NotepadHeader">Notes</div>
-        <div id="noteBackdrop" class="zen-backdrop">
-            <textarea id="headdingText" placeholder="Your Heading"></textarea>
-            <hr />
-            <textarea id="note-text" placeholder="Write something here"></textarea>
+        <div class="settings">
+          <p>Type of Quotes</p>
+          <label class="radioContainer">
+            Famous
+            <input type="radio" checked="checked" name="radioQuote" value="famous">
+            <span class="checkmark"></span>
+          </label>
+          <label class="radioContainer">
+            Movies
+            <input type="radio" name="radioQuote" value="movies">
+            <span class="checkmark"></span>
+          </label>
         </div>
+      </div>
+      <!-- <div class="modal-footer">
+          <h3>Modal Footer</h3>
+          </div> -->
     </div>
-    <div class='contentContainer'>
-        <div class='quote shadowText' id='quoteContainer'></div>
-        <ul class="social-icons fadeOnLoad" id="socialContainer">
-            <li class='youtube'>
-                <a href="https://www.youtube.com/" target="_blank">
-                    <div id="container">
-                        <div id="halfclip">
-                            <div class="halfcircle" id="clipped">
-                            </div>
-                        </div>
-                        <div class="halfcircle" id="fixed">
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class='facebook'>
-                <a href="https://www.facebook.com/" target="_blank">
-                    <div id="container">
-                        <div id="halfclip">
-                            <div class="halfcircle" id="clipped">
-                            </div>
-                        </div>
-                        <div class="halfcircle" id="fixed">
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class='gmail'>
-                <a href="https://gmail.com/" target="_blank">
-                    <div id="container">
-                        <div id="halfclip">
-                            <div class="halfcircle" id="clipped">
-                            </div>
-                        </div>
-                        <div class="halfcircle" id="fixed">
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class='twitter'>
-                <a href="https://twitter.com/" target="_blank">
-                    <div id="container">
-                        <div id="halfclip">
-                            <div class="halfcircle" id="clipped">
-                            </div>
-                        </div>
-                        <div class="halfcircle" id="fixed">
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class='gplus'>
-                <a href="https://plus.google.com/" target="_blank">
-                    <div id="container">
-                        <div id="halfclip">
-                            <div class="halfcircle" id="clipped">
-                            </div>
-                        </div>
-                        <div class="halfcircle" id="fixed">
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li class='linkedin'>
-                <a href="https://linkedin.com/" target="_blank">
-                    <div id="container">
-                        <div id="halfclip">
-                            <div class="halfcircle" id="clipped">
-                            </div>
-                        </div>
-                        <div class="halfcircle" id="fixed">
-                        </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
+  </div>
+  <div class="dateTime">
+    <div class="dateContainer">
+      <div class="date shadowText"></div>
     </div>
-    <!-- <div class="img-title"></div> -->
-    <script src="js/custom.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/news.js"></script>
+    <div class="time shadowText"></div>
+  </div>
+  <div class="weatherContainerParent fadeOnLoad">
+    <div id="loactor" class="locatorDiv">
+      <div id="locElements">
+        <input type="text" placeholder="Enter your location" id="location" />
+        <div class="searchButtonDiv">
+          <div id="saveLocation">
+            <img src="../images/search.png" alt="Go">
+          </div>
+        </div>
+      </div>
+      <div id="errMsgDiv">
+        <p id="errMsg"></p>
+        <div id="loadingDiv" class="loadingParent" style="opacity:0;">
+          <div class="loading"></div>
+        </div>
+      </div>
+    </div>
+    <div id="weatherContainer" class="weatherContainer">
+      <div class="weatherColumn">
+        <div class="temp"></div>
+      </div>
+      <div class="weatherColumn wcCenter">
+        <div class="iconDesc"></div>
+        <div class="icon"></div>
+        <div class="city"></div>
+      </div>
+      <div class="weatherColumn">
+        <div id="resetDiv"><img src="../images/reset2.jpg" /></div>
+        <div class="weatherDetails">
+          <ul></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="divNoteToggle" class="fadeOnLoad" style="right:0vh">
+    <div id="toggleNote" class="btnToggleNote">></div>
+  </div>
+  <div id="noteTab" class="zennable fadeOnLoad" style="width:0vw">
+    <div class="NotepadHeader">Notes</div>
+    <div id="noteBackdrop" class="zen-backdrop">
+      <textarea id="headdingText" placeholder="Your Heading"></textarea>
+      <hr />
+      <textarea id="note-text" placeholder="Write something here"></textarea>
+    </div>
+  </div>
+  <div class='contentContainer'>
+    <div class='quote shadowText' id='quoteContainer'></div>
+    <ul class="social-icons fadeOnLoad" id="socialContainer">
+      <li class='youtube'>
+        <a href="https://www.youtube.com/" target="_blank">
+          <div id="container">
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
+              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class='facebook'>
+        <a href="https://www.facebook.com/" target="_blank">
+          <div id="container">
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
+              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class='gmail'>
+        <a href="https://gmail.com/" target="_blank">
+          <div id="container">
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
+              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class='twitter'>
+        <a href="https://twitter.com/" target="_blank">
+          <div id="container">
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
+              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class='gplus'>
+        <a href="https://plus.google.com/" target="_blank">
+          <div id="container">
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
+              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
+          </div>
+        </a>
+      </li>
+      <li class='linkedin'>
+        <a href="https://linkedin.com/" target="_blank">
+          <div id="container">
+            <div id="halfclip">
+              <div class="halfcircle" id="clipped">
+              </div>
+            </div>
+            <div class="halfcircle" id="fixed">
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <!-- <div class="img-title"></div> -->
+  <script src="js/custom.js"></script>
+  <script src="js/settings.js"></script>
+  <script src="js/news.js"></script>
 </body>
 
 </html>
