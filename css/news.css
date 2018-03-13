@@ -12,7 +12,6 @@
   max-height: 100vh;
   height: 100vh;
   margin: 0;
-  box-shadow: 1px 1px 5px #555;
 }
 
 .newsContainer::-webkit-scrollbar {
@@ -23,7 +22,7 @@
 .card {
   display: grid;
   border-radius: 3px;
-  margin: 4vh 0px;
+  margin: 3vh 0px;
   width: 17vw;
   border: 1px solid #ccc;
   /* background: rgb(245, 245, 245);
@@ -50,6 +49,7 @@
   padding: 5px 10px;
   border-left: 7px solid #42a5f5;
   background: #333;
+  max-width: 17vw;
 }
 
 .news {
@@ -88,6 +88,7 @@
   border-left: 7px solid #9933CC;
   background: #fff;
   color: #000;
+  width: 17vw;
 }
 
 .news .newsDesc span{
@@ -101,7 +102,7 @@
   border-left: 7px solid #F44336;
   background: #f2f2f2;
   color: #000;
-  max-width: 17vw;
+  width: 17vw;
 }
 
 /*.news .imgContainer {
@@ -153,22 +154,6 @@
 
 #toggleDiv:hover {
   box-shadow: inset 1px 1px 10px transparent;
-}
-
-#down {
-  width: 100%;
-  text-align: center;
-  line-height: 4vh;
-  height: 7vh;
-  color: #fff;
-  background: linear-gradient(#000, transparent);
-  margin-top: -7vh;
-  transform: rotate(180deg);
-  cursor: pointer;
-}
-
-#down:active {
-  box-shadow: inset 1px 1px 10px #666;
 }
 
 .closeNews {
