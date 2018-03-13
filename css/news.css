@@ -2,7 +2,7 @@
   position: absolute;
   z-index: 200;
   width: 0;
-  background: #fffa;
+  background: #000a;
 }
 
 .newsContainer {
@@ -24,11 +24,6 @@
   border-radius: 3px;
   margin: 3vh 0px;
   width: 17vw;
-  border: 1px solid #ccc;
-  /* background: rgb(245, 245, 245);
-    border-color: rgb(245, 245, 245);
-    border-top: 1px solid #ccc;
-    */
 }
 
 .card:last-child {

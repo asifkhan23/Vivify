@@ -73,10 +73,3 @@ function hideNews() {
   document.getElementById("newsContainer").style.boxShadow = "box-shadow: 0px 0px 0px transparent";
 
 }
-
-// Scroll News Tab
-
-
-function scrollNews() {
-  document.getElementsByClassName("newsContainer").scrollTop = +10;
-}
