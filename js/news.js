@@ -7,63 +7,50 @@ fetch(req)
   .then(data => {
     console.log(data);
     var newsElem = document.querySelector('.news');
-    var author, titleFull, author2, titleFull2, author3, titleFull3;
     for (var i = 0; i < 15; i += 3) {
       if (data.articles[i].urlToImage != null) {
-        //==1
-        titleFull = data.articles[i].title;
-        if (titleFull.length > 60) {
-          titleFull = titleFull.substring(0, 59) + "...";
-        }
-        if (data.articles[i].author == null) {
-          author = data.articles[i].source.name;
-        } else {
-          author = data.articles[i].author;
-        }
-        //===2
-        titleFull2 = data.articles[i + 1].title;
-        if (titleFull2.length > 60) {
-          titleFull2 = titleFull2.substring(0, 59) + "...";
-        }
-        if (data.articles[i + 1].author == null) {
-          author2 = data.articles[i + 1].source.name;
-        } else {
-          author2 = data.articles[i + 1].author;
-        }
-        //===3
-        titleFull3 = data.articles[i + 2].title;
-        if (titleFull3.length > 60) {
-          titleFull3 = titleFull3.substring(0, 59) + "...";
-        }
-        if (data.articles[i + 2].author == null) {
-          author3 = data.articles[i + 2].source.name;
-        } else {
-          author3 = data.articles[i + 2].author;
-        }
         newsElem.innerHTML = newsElem.innerHTML +
           "<div class=\"flexcolumn\" >" +
-          "<div class=\"card\">" +
-          "<img src=" + data.articles[i].urlToImage + ">" +
-          "<div class=\"title\"><a href=" + data.articles[i].url + "><span style=\"font-size:2vh\">" + titleFull + "</span></a></div>" +
-          "<div class=\"newsDesc\"><p>" + data.articles[i].description.substr(0, 120) + ".. </p></div>" +
-          "<div class=\"author\"><p>" + author + "</p></div>" +
-          "</div>" +
-          "<div class=\"card\">" +
-          "<img src=" + data.articles[i + 1].urlToImage + ">" +
-          "<div class=\"title\"><a href=" + data.articles[i + 1].url + "><span style=\"font-size:2vh\">" + titleFull2 + "</span></a></div>" +
-          "<div class=\"newsDesc\"><p>" + data.articles[i + 1].description.substr(0, 120) + ".. </p></div>" +
-          "<div class=\"author\"><p>" + author2 + "</p></div>" +
-          "</div>" +
-          "<div class=\"card\">" +
-          "<img src=" + data.articles[i + 2].urlToImage + ">" +
-          "<div class=\"title\"><a href=" + data.articles[i + 2].url + "><span style=\"font-size:2vh\">" + titleFull3 + "</span></a></div>" +
-          "<div class=\"newsDesc\"><p>" + data.articles[i + 2].description.substr(0, 120) + ".. </p></div>" +
-          "<div class=\"author\"><p>" + author3 + "</p></div>" +
-          "</div>" +
+          getCard(data.articles[i]) +
+          getCard(data.articles[i + 1]) +
+          getCard(data.articles[i + 2])  +
           "</div>";
       }
     }
   })
+
+  function getCard(article){
+    var author, titleFull, desc, domCard;
+
+    if (article.title.length > 60) {
+      titleFull = article.title.substring(0, 59) + "...";
+    }
+    else{
+      titleFull = article.title;
+    }
+
+    if (article.author == null) {
+      author = article.source.name;
+    } 
+    else {
+      author = article.author;
+    }
+
+    if (article.description == null) {
+      desc = "-";
+    }
+    else{
+      desc = article.description;
+    }
+
+    domCard = "<div class=\"card\">" +
+      "<img src=" + article.urlToImage + ">" +
+      "<div class=\"title\"><a href=" + article.url + "><span style=\"font-size:2vh\">" + titleFull + "</span></a></div>" +
+      "<div class=\"newsDesc\"><p>" + desc.substr(0, 120) + ".. </p><span>" + article.publishedAt + "</span></div>" +
+      "<div class=\"author\"><p>" + author + "</p></div>" +
+    "</div>";
+    return domCard;
+  }
 
 // Show/Hide News
 document.getElementById("toggleDiv").addEventListener("click", displayNews);
