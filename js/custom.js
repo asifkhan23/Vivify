@@ -119,6 +119,7 @@ var beautifulNewTab = (function beautifulNewTab() {
           tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
           weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
           document.getElementById('myModal').style.display = "none";
+          document.getElementById('locElements').style.border = "1px solid #eee";
         } else {
           document.getElementById('locElements').style.border = "1px solid red";
           // document.getElementById('loadingDiv').style.display = "none";

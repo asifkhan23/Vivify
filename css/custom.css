@@ -510,7 +510,7 @@ label[for=comment] {
   display: inline-block;
   width: 60px;
   height: 34px;
-  left: 30%;
+  left: 36%;
 }
 
 .switch input {
@@ -581,7 +581,7 @@ input:checked+.slider:before {
 }
 
 #locElements {
-  width: 29%;
+  width: 35%;
   margin: 0% 48% 0% 48%;
   border: 1px solid #eee;
   position: relative;
