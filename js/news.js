@@ -27,29 +27,29 @@ document.getElementById("toggleDiv").addEventListener("click", displayNews);
 document.getElementById("collapseNews").addEventListener("click", hideNews);
 
 function displayNews() {
-    document.getElementById("newsContainer").style.transition = "width 0.5s";
-    document.getElementById("down").style.transition = "width 0.5s";
-    //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-out"
-    
-    document.getElementById("newsContainerParent").style.width = "100vw";
-    document.getElementById("newsContainer").style.width = "100vw";
-    document.getElementById("down").style.width = "100%";
+  document.getElementById("newsContainer").style.transition = "width 0.5s";
+  document.getElementById("down").style.transition = "width 0.5s";
+  //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-out"
 
-    document.getElementById("newsContainer").style.boxShadow = "box-shadow: 1px 1px 5px #555";
-    document.getElementById("NewsToggle").innerText = "<";
+  document.getElementById("newsContainerParent").style.width = "100vw";
+  document.getElementById("newsContainer").style.width = "100vw";
+  document.getElementById("down").style.width = "100%";
+
+  document.getElementById("newsContainer").style.boxShadow = "box-shadow: 1px 1px 5px #555";
+  document.getElementById("NewsToggle").innerText = "<";
 }
 
-function hideNews(){
-    document.getElementById("newsContainer").style.transition = "width 0.25s";
-    document.getElementById("down").style.transition = "width 0.25s";
-    //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-in"
+function hideNews() {
+  document.getElementById("newsContainer").style.transition = "width 0.25s";
+  document.getElementById("down").style.transition = "width 0.25s";
+  //document.getElementById("newsContainer").style.transitionTimingFunction = "ease-in"
 
-    document.getElementById("newsContainerParent").style.width = "0vw";
-    document.getElementById("newsContainer").style.width = "0vw";
-    document.getElementById("down").style.width = "0vw";
+  document.getElementById("newsContainerParent").style.width = "0vw";
+  document.getElementById("newsContainer").style.width = "0vw";
+  document.getElementById("down").style.width = "0vw";
 
-    document.getElementById("newsContainer").style.boxShadow = "box-shadow: 0px 0px 0px transparent";
-    document.getElementById("NewsToggle").innerText = ">";
+  document.getElementById("newsContainer").style.boxShadow = "box-shadow: 0px 0px 0px transparent";
+  document.getElementById("NewsToggle").innerText = ">";
 }
 
 // Scroll News Tab
