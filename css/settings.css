@@ -37,7 +37,7 @@
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
   animation-duration: 0.4s;
-  height: 300px;
+  height: 350px;
   border-radius: 20px;
 }
 
@@ -121,8 +121,9 @@
 }
 
 .settings p {
-  width: 70%;
+  width: 50%;
   float: left;
+  font-size: 13px;
 }
 
 .customHide {
@@ -140,6 +141,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  left: 14%;
 }
 
 /* Hide the browser's default radio button */

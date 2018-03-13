@@ -396,7 +396,6 @@ label[for=comment] {
   margin-top: -50vh;
 } */
 
-
 .fadeOnLoad {
   opacity: 0;
   animation: fadeIn 2s ease-in 1 forwards;
@@ -511,6 +510,7 @@ label[for=comment] {
   display: inline-block;
   width: 60px;
   height: 34px;
+  left: 30%;
 }
 
 .switch input {
@@ -581,20 +581,30 @@ input:checked+.slider:before {
 }
 
 #locElements {
-  display: inline-flex;
-  width: 100%;
-  padding: 0% 5%;
+  width: 29%;
+  margin: 0% 48% 0% 48%;
+  border: 1px solid #eee;
+  position: relative;
+  padding: 0 10% 0 2%;
+  height: 38px;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 #locElements #location {
-  width: 83%;
-  height: 5vh;
-  border-bottom-left-radius: 5px;
-  border-top-left-radius: 5px;
-  box-shadow: 0 0 0 0 transparent;
-  border: 0;
-  padding: 1vh;
-  min-height: 5vh;
+  width: 94%;
+  border: none;
+  display: inline-block;
+  padding: 8px 0;
+  margin: 0;
+  height: 38px;
+  line-height: 22px;
+  font-size: 14px;
+  color: #999;
+}
+
+#locElements #location:focus {
+  outline: none;
 }
 
 #locElements #saveLocation {
@@ -602,12 +612,24 @@ input:checked+.slider:before {
   border-bottom-right-radius: 5px;
   border: 0;
   background-color: #fff;
-  padding: 1vh;
+  padding: 0;
   cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 38px;
+  line-height: 38px;
+  width: 40px;
+  vertical-align: middle;
+  text-align: center;
+  border-left: 1px solid #eee;
 }
 
 #locElements #saveLocation img {
-  height: 3vh;
+  height: 24px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 7px 0 0 0;
 }
 
 .loadingParent {

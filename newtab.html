@@ -12,7 +12,7 @@
 <body>
   <div class="buttonsGroup">
     <div id="settings">
-      <img class="gear" src="images\ribbon5.png" alt="settings"/>
+      <img class="gear" src="images\ribbon5.png" alt="settings" />
     </div>
     <div id="toggleDiv">
       <div id="NewsToggle" class="toggleButton">></div>
@@ -26,7 +26,7 @@
       <span style="transform:rotate(180deg)">^</span>
     </div>
     <div id="collapseNews" class="closeNews">
-      <img src="./images/close.png" alt="close"/>
+      <img src="./images/close.png" alt="close" />
     </div>
   </div>
   <!-- The Modal -->
@@ -44,6 +44,17 @@
             <input id="toggleWeather" type="checkbox" checked>
             <span class="slider round"></span>
           </label>
+        </div>
+        <div class="settings">
+          <p>Weather Location</p>
+          <div id="locElements">
+            <input type="text" placeholder="Enter your location" id="location" />
+            <div class="searchButtonDiv" style="display: inline-block;">
+              <div id="saveLocation">
+                <img src="../images/search.png" alt="Go">
+              </div>
+            </div>
+          </div>
         </div>
         <div class="settings">
           <p>Show Notes</p>
