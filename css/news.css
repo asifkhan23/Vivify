@@ -171,15 +171,15 @@
 }
 
 .flexrow {
-  width: 100vw;
+  width: 96vw;
   display: flex;
   flex-wrap: wrap;
-  padding: 4vh 3vw;
+  margin: 2vh 3vw;
 }
 
 .flexcolumn {
   flex: 20%;
-  max-width: 19%;
+  max-width: 20%;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
