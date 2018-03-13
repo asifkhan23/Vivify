@@ -3,7 +3,7 @@ var beautifulNewTab = (function beautifulNewTab() {
   var QUOTES_API_OLD = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
   var IMAGE_API = "https://source.unsplash.com/random";
   var WEATHER_API_OLD = "http://api.openweathermap.org/data/2.5/weather?q=dubai&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657"
-  
+
   var myHeaders = new Headers({
     "Content-Type": "application/x-www-form-urlencoded",
     "Accept": "application/json",
@@ -55,7 +55,7 @@ var beautifulNewTab = (function beautifulNewTab() {
       imageElem.style.backgroundImage = "url(" + resp.url + ")";
     })
 
-  
+
   document.getElementById("resetDiv").addEventListener("click", resetLocation);
 
   function resetLocation() {
@@ -118,9 +118,12 @@ var beautifulNewTab = (function beautifulNewTab() {
           iconDescElem.innerHTML = weatherCode.main;
           tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
           weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
+          document.getElementById('myModal').style.display = "none";
+          document.getElementById('locElements').style.border = "1px solid #eee";
         } else {
-          document.getElementById('loadingDiv').style.display = "none";
-          document.getElementById('errMsg').innerHTML = "No such location found";
+          document.getElementById('locElements').style.border = "1px solid red";
+          // document.getElementById('loadingDiv').style.display = "none";
+          // document.getElementById('errMsg').innerHTML = "No such location found";
         }
       })
   }

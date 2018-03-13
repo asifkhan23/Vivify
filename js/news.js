@@ -94,6 +94,7 @@ function hideNews() {
     document.getElementById("down").style.width = "0vw";
 
     document.getElementById("newsContainer").style.boxShadow = "box-shadow: 0px 0px 0px transparent";
+
 }
 
 // Scroll News Tab
