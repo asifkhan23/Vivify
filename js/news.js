@@ -26,7 +26,7 @@ fetch(req)
     if(!(article.urlToImage.substring(0, 8) == "https://" || article.urlToImage.substring(0, 7) == "http://")){
       imgUrl = "https://" + article.urlToImage;
     }
-    if (article.author == null) {
+    if (article.author == null || article.author == "") {
       author = article.source.name;
     } 
     else {
