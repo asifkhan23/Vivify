@@ -22,13 +22,16 @@ fetch(req)
   function getCard(article){
     var author, imgUrl, desc, domCard;
     imgUrl = article.urlToImage;
-    
-    if(!(article.urlToImage.substring(0, 8) == "https://" || article.urlToImage.substring(0, 7) == "http://")){
-      imgUrl = "https://" + article.urlToImage;
+    if(imgUrl != null){
+      if(!(article.urlToImage.substring(0, 8) == "https://" || article.urlToImage.substring(0, 7) == "http://")){
+        imgUrl = "https://" + article.urlToImage;
+      }
+    }else {
+      imgUrl = "images/news-no-image.jpeg";
     }
     if (article.author == null || article.author == "") {
       author = article.source.name;
-    } 
+    }
     else {
       author = article.author;
     }
