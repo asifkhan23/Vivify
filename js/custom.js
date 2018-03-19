@@ -31,9 +31,22 @@ var beautifulNewTab = (function beautifulNewTab() {
 
     var quotesObj = {
         "quotes":[
-              {"author": "value1", "quote": "def1"},
-        		  {"author": "value2", "quote": "def2"},
-              {"author": "value3", "quote": "def3"}
+              {"author": "Carol Burnett", "quote": "Only I can change my life. No one can do it for me."},
+        		  {"author": "Charles R. Swindoll", "quote": "Life is 10% what happens to you and 90% how you react to it."},
+              {"author": "Nikos Kazantzakis", "quote": "In order to succeed, we must first believe that we can."},
+              {"author": "Orison Swett Marden", "quote": "A will finds a way."},
+              {"author": "Nelson Mandela", "quote": "It always seems impossible until it's done."},
+              {"author": "Mark Twain", "quote": "The secret of getting ahead is getting started."},
+              {"author": "Walt Disney", "quote": "If you can dream it, you can do it."},
+              {"author": "Theodore Roosevelt", "quote": "Keep your eyes on the stars, and your feet on the ground."},
+              {"author": "Eleanor Roosevelt", "quote": "With the new day comes new strength and new thoughts."},
+              {"author": "Robert H. Schuller", "quote": "Problems are not stop signs, they are guidelines."},
+              {"author": "Aristotle", "quote": "Quality is not an act, it is a habit."},
+              {"author": "Arthur Ashe", "quote": "Start where you are. Use what you have. Do what you can."},
+              {"author": "Ayn Rand", "quote": "A creative man is motivated by the desire to achieve, not by the desire to beat others."},
+              {"author": "Sam Levenson", "quote": "Don't watch the clock; do what it does. Keep going."},
+              {"author": "Winston Churchill", "quote": "If you're going through hell, keep going."},
+              {"author": "Maya Angelou", "quote": "We may encounter many defeats but we must not be defeated."}
             ]
     };
 
