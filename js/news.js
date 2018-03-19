@@ -35,6 +35,12 @@ fetch(req)
     else {
       author = article.author;
     }
+    if(author.substring(0, 4) == "http"){
+      var index1, index2;
+      index1 = author.indexOf('.');
+      index2 = author.indexOf('.',index1+1);
+      author = author.substring(index1+1, index2) + ".com";
+    }
 
     if (article.description == null) {
       desc = "-";
@@ -45,8 +51,8 @@ fetch(req)
 
     domCard = "<div class=\"card\">" +
       "<img src=" + imgUrl + ">" +
-      "<div class=\"title\"><a href=" + article.url + "><span style=\"font-size:2vh\">" + article.title + "</span></a></div>" +
-      "<div class=\"newsDesc\"><p>" + desc + ".. </p><span>" + article.publishedAt.substring(0,10)+"<br/>"+ article.publishedAt.substring(11,19) + "</span></div>" +
+      "<div class=\"title\"><a href=" + article.url + "><span style=\"font-size:calc(12px+2vh)\">" + article.title + "</span></a></div>" +
+      "<div class=\"newsDesc\"><p>" + desc + ".. </p><span>" + article.publishedAt.substring(0,10) + "</span></div>" +
       "<div class=\"author\"><p>" + author + "</p></div>" +
     "</div>";
     return domCard;
