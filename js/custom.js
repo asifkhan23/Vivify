@@ -23,19 +23,25 @@ var beautifulNewTab = (function beautifulNewTab() {
     var timeElement = document.querySelector('.time');
     var weatherLocation = document.getElementById("location");
     var radioQuote = document.querySelector('input[name="radioQuote"]:checked');
+
     var arrayImg = new Array();
     arrayImg[0] = "globe.png";
     arrayImg[1] = "notes.png";
     arrayImg[2] = "search.png";
+
+    var quotesObj = {
+        "quotes":[
+              {"author": "value1", "quote": "def1"},
+        		  {"author": "value2", "quote": "def2"},
+              {"author": "value3", "quote": "def3"}
+            ]
+    };
 
     document.getElementById("divNoteToggle").addEventListener("click", displayNote);
     document.getElementById("resetDiv").addEventListener("click", resetLocation);
     document.getElementById("saveLocation").addEventListener("click", setLocation);
     document.getElementsByName("radioQuote")[0].addEventListener("click", setQuoteTypeFamous);
     document.getElementsByName("radioQuote")[1].addEventListener("click", setQuoteTypeMovies);
-
-    //getRandomImage(arrayImg);
-
 
     //On install initialization
     //chrome.runtime.onInstalled.addListener(function () {
@@ -222,12 +228,22 @@ var beautifulNewTab = (function beautifulNewTab() {
         }
     }
 
+    //getRandomImage(arrayImg);
+
     function getRandomImage(arrayImg) {
-      var path = path || 'images/'; // default path here
-      var num = Math.floor( Math.random() * arrayImg.length );
-      var img = arrayImg[ num ];
-      var imageElem = document.querySelector('.contentContainer');
-      imageElem.style.backgroundImage = "url(" + path + img + ")";
+        var path = path || 'images/'; // default path here
+        var num = Math.floor( Math.random() * arrayImg.length );
+        var img = arrayImg[ num ];
+        var imageElem = document.querySelector('.contentContainer');
+        imageElem.style.backgroundImage = "url(" + path + img + ")";
+    }
+
+    //generateRandomQuote(quotesObj);
+
+    function generateRandomQuote(quotesObj) {
+        var num = Math.floor( Math.random() * quotesObj.quotes.length );
+        console.log(quotesObj.quotes[num].author);
+        console.log(quotesObj.quotes[num].quote);
     }
 
 })();
