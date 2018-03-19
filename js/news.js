@@ -46,7 +46,7 @@ fetch(req)
     domCard = "<div class=\"card\">" +
       "<img src=" + imgUrl + ">" +
       "<div class=\"title\"><a href=" + article.url + "><span style=\"font-size:2vh\">" + article.title + "</span></a></div>" +
-      "<div class=\"newsDesc\"><p>" + desc + ".. </p><span>" + article.publishedAt.substring(0,10)+"<br/>"+ article.publishedAt.substring(11,19) + "</span></div>" +
+      "<div class=\"newsDesc\"><p>" + desc + ".. </p><span>" + article.publishedAt.substring(0,10)+"</span></div>" +
       "<div class=\"author\"><p>" + author + "</p></div>" +
     "</div>";
     return domCard;
