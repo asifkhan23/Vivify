@@ -244,7 +244,7 @@ var beautifulNewTab = (function beautifulNewTab() {
     //getRandomImage(arrayImg);
 
     function getRandomImage(arrayImg) {
-        var path = path || 'images/'; // default path here
+        var path = path || 'images/wallpapers'; // default path here
         var num = Math.floor( Math.random() * arrayImg.length );
         var img = arrayImg[ num ];
         var imageElem = document.querySelector('.contentContainer');
