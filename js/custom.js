@@ -37,29 +37,29 @@ var beautifulNewTab = (function beautifulNewTab() {
     arrayImg[9] = "wallpaper10.jpg";
 
     var quotesObj = {
-        "quotes":[
-              {"author": "Carol Burnett", "quote": "Only I can change my life. No one can do it for me."},
-              {"author": "Charles R. Swindoll", "quote": "Life is 10% what happens to you and 90% how you react to it."},
-              {"author": "Nikos Kazantzakis", "quote": "In order to succeed, we must first believe that we can."},
-              {"author": "Orison Swett Marden", "quote": "A will finds a way."},
-              {"author": "Nelson Mandela", "quote": "It always seems impossible until it's done."},
-              {"author": "Mark Twain", "quote": "The secret of getting ahead is getting started."},
-              {"author": "Walt Disney", "quote": "If you can dream it, you can do it."},
-              {"author": "Theodore Roosevelt", "quote": "Keep your eyes on the stars, and your feet on the ground."},
-              {"author": "Eleanor Roosevelt", "quote": "With the new day comes new strength and new thoughts."},
-              {"author": "Robert H. Schuller", "quote": "Problems are not stop signs, they are guidelines."},
-              {"author": "Aristotle", "quote": "Quality is not an act, it is a habit."},
-              {"author": "Arthur Ashe", "quote": "Start where you are. Use what you have. Do what you can."},
-              {"author": "Ayn Rand", "quote": "A creative man is motivated by the desire to achieve, not by the desire to beat others."},
-              {"author": "Sam Levenson", "quote": "Don't watch the clock; do what it does. Keep going."},
-              {"author": "Winston Churchill", "quote": "If you're going through hell, keep going."},
-              {"author": "Maya Angelou", "quote": "We may encounter many defeats but we must not be defeated."}
-            ]
+        "quotes": [
+              { "author": "Carol Burnett", "quote": "Only I can change my life. No one can do it for me." },
+              { "author": "Charles R. Swindoll", "quote": "Life is 10% what happens to you and 90% how you react to it." },
+              { "author": "Nikos Kazantzakis", "quote": "In order to succeed, we must first believe that we can." },
+              { "author": "Orison Swett Marden", "quote": "A will finds a way." },
+              { "author": "Nelson Mandela", "quote": "It always seems impossible until it's done." },
+              { "author": "Mark Twain", "quote": "The secret of getting ahead is getting started." },
+              { "author": "Walt Disney", "quote": "If you can dream it, you can do it." },
+              { "author": "Theodore Roosevelt", "quote": "Keep your eyes on the stars, and your feet on the ground." },
+              { "author": "Eleanor Roosevelt", "quote": "With the new day comes new strength and new thoughts." },
+              { "author": "Robert H. Schuller", "quote": "Problems are not stop signs, they are guidelines." },
+              { "author": "Aristotle", "quote": "Quality is not an act, it is a habit." },
+              { "author": "Arthur Ashe", "quote": "Start where you are. Use what you have. Do what you can." },
+              { "author": "Ayn Rand", "quote": "A creative man is motivated by the desire to achieve, not by the desire to beat others." },
+              { "author": "Sam Levenson", "quote": "Don't watch the clock; do what it does. Keep going." },
+              { "author": "Winston Churchill", "quote": "If you're going through hell, keep going." },
+              { "author": "Maya Angelou", "quote": "We may encounter many defeats but we must not be defeated." }
+        ]
     };
 
     document.getElementById("divNoteToggle").addEventListener("click", displayNote);
     document.getElementById("resetDiv").addEventListener("click", resetLocation);
-    document.getElementById("saveLocation").addEventListener("click", setLocation);
+    document.getElementById("saveLocation").addEventListener("click", fetchWeather);
     document.getElementsByName("radioQuote")[0].addEventListener("click", setQuoteTypeFamous);
     document.getElementsByName("radioQuote")[1].addEventListener("click", setQuoteTypeMovies);
 
@@ -135,6 +135,7 @@ var beautifulNewTab = (function beautifulNewTab() {
     });
 
 
+
     function resetLocation() {
         chrome.storage.sync.get('location', function (data) {
             weatherLocation.value = '';
@@ -143,20 +144,20 @@ var beautifulNewTab = (function beautifulNewTab() {
         document.getElementById('loactor').style.display = "block";
     }
 
-    function setLocation() {
-        document.getElementById('loadingDiv').style.display = "block";
-        var weatherLocation = document.getElementById("location");
+    function setLocation(city) {
+
         chrome.storage.sync.set({
-            'location': weatherLocation.value
+            'location': city
         }, function () {
             chrome.storage.sync.get('location', function (data) {
                 weatherLocation.value = data.location ? data.location : '';
-                fetchWeather();
             });
         });
     }
 
     function fetchWeather() {
+        document.getElementById('loadingDiv').style.display = "block";
+        var weatherLocation = document.getElementById("location");
         WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=" + weatherLocation.value + "&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657";
         fetch(WEATHER_API)
           .then(function (response) {
@@ -164,31 +165,39 @@ var beautifulNewTab = (function beautifulNewTab() {
           })
           .then(function (resp) {
               if (resp.cod != 404) {
-                  document.getElementById('loactor').style.display = "none";
-                  document.getElementById('loadingDiv').style.display = "none";
-                  document.getElementById('errMsg').innerHTML = "";
-                  document.getElementById('weatherContainer').style.display = "block";
-
-                  var cityElem = document.querySelector('.city');
-                  var tempElem = document.querySelector('.temp');
-                  var iconDescElem = document.querySelector('.iconDesc');
-                  var iconElem = document.querySelector('.icon');
-                  var weatherDetails = document.querySelector('.weatherDetails ul');
-                  var weatherCode = resp.weather[0];
-                  var iconUrl = "http://openweathermap.org/img/w/" + weatherCode.icon + ".png";
-                  iconElem.innerHTML = ("<img src='" + iconUrl + "'>");
-                  cityElem.innerHTML = resp.name;
-                  iconDescElem.innerHTML = weatherCode.main;
-                  tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
-                  weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
-                  document.getElementById('myModal').style.display = "none";
-                  document.getElementById('locElements').style.border = "1px solid #eee";
-              } else {
+                  putWeatherDetails(resp);
+                  setLocation(weatherLocation.value);
+              }
+              else {
                   document.getElementById('locElements').style.border = "1px solid red";
+                  weatherLocation.value = "";
                   // document.getElementById('loadingDiv').style.display = "none";
                   // document.getElementById('errMsg').innerHTML = "No such location found";
               }
           })
+    }
+
+    function putWeatherDetails(resp) {
+
+        document.getElementById('loactor').style.display = "none";
+        document.getElementById('loadingDiv').style.display = "none";
+        document.getElementById('errMsg').innerHTML = "";
+        document.getElementById('weatherContainer').style.display = "block";
+
+        var cityElem = document.querySelector('.city');
+        var tempElem = document.querySelector('.temp');
+        var iconDescElem = document.querySelector('.iconDesc');
+        var iconElem = document.querySelector('.icon');
+        var weatherDetails = document.querySelector('.weatherDetails ul');
+        var weatherCode = resp.weather[0];
+        var iconUrl = "http://openweathermap.org/img/w/" + weatherCode.icon + ".png";
+        iconElem.innerHTML = ("<img src='" + iconUrl + "'>");
+        cityElem.innerHTML = resp.name;
+        iconDescElem.innerHTML = weatherCode.main;
+        tempElem.innerHTML = "<span>" + resp.main.temp_min + " &#8451 </span>  <strong> " + resp.main.temp + " &#8451 </strong> <span>" + resp.main.temp_max + " &#8451 </span>";
+        weatherDetails.innerHTML = "<li><img src='images/humidity-icon.png'><span>" + resp.main.humidity + "</span>% humidity </li>" + "<li><img src='images/wind-icon.png'><span>" + resp.wind.speed + "</span> m/s NW </li>";
+        document.getElementById('myModal').style.display = "none";
+        document.getElementById('locElements').style.border = "1px solid #eee";
     }
 
     function setQuoteTypeFamous() {
@@ -252,8 +261,8 @@ var beautifulNewTab = (function beautifulNewTab() {
 
     function getRandomImage(arrayImg) {
         var path = path || 'images/wallpapers/'; // default path here
-        var num = Math.floor( Math.random() * arrayImg.length );
-        var img = arrayImg[ num ];
+        var num = Math.floor(Math.random() * arrayImg.length);
+        var img = arrayImg[num];
         var imageElem = document.querySelector('.contentContainer');
         imageElem.style.backgroundImage = "url(" + path + img + ")";
     }
@@ -261,7 +270,7 @@ var beautifulNewTab = (function beautifulNewTab() {
     //generateRandomQuote(quotesObj);
 
     function generateRandomQuote(quotesObj) {
-        var num = Math.floor( Math.random() * quotesObj.quotes.length );
+        var num = Math.floor(Math.random() * quotesObj.quotes.length);
         console.log(quotesObj.quotes[num].author);
         console.log(quotesObj.quotes[num].quote);
     }
