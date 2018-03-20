@@ -25,9 +25,16 @@ var beautifulNewTab = (function beautifulNewTab() {
     var radioQuote = document.querySelector('input[name="radioQuote"]:checked');
 
     var arrayImg = new Array();
-    arrayImg[0] = "globe.png";
-    arrayImg[1] = "notes.png";
-    arrayImg[2] = "search.png";
+    arrayImg[0] = "wallpaper1.jpg";
+    arrayImg[1] = "wallpaper2.jpg";
+    arrayImg[2] = "wallpaper3.jpg";
+    arrayImg[3] = "wallpaper4.jpg";
+    arrayImg[4] = "wallpaper5.jpg";
+    arrayImg[5] = "wallpaper6.jpg";
+    arrayImg[6] = "wallpaper7.jpg";
+    arrayImg[7] = "wallpaper8.jpg";
+    arrayImg[8] = "wallpaper9.jpg";
+    arrayImg[9] = "wallpaper10.jpg";
 
     var quotesObj = {
         "quotes":[
