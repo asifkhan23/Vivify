@@ -9,6 +9,21 @@ var arrayImg = new Array();
     arrayImg[7] = "wallpaper8.jpg";
     arrayImg[8] = "wallpaper9.jpg";
     arrayImg[9] = "wallpaper10.jpg";
+    arrayImg[10] = "wallpaper11.jpg";
+    arrayImg[11] = "wallpaper12.jpg";
+    arrayImg[12] = "wallpaper13.jpg";
+    arrayImg[13] = "wallpaper14.jpg";
+    arrayImg[14] = "wallpaper15.jpg";
+    arrayImg[15] = "wallpaper16.jpg";
+    arrayImg[16] = "wallpaper17.jpg";
+    arrayImg[17] = "wallpaper18.jpg";
+    arrayImg[18] = "wallpaper19.jpg";
+    arrayImg[19] = "wallpaper20.jpg";
+    arrayImg[20] = "wallpaper21.jpg";
+    arrayImg[21] = "wallpaper22.jpg";
+    arrayImg[22] = "wallpaper23.jpg";
+    arrayImg[23] = "wallpaper24.jpg";
+    arrayImg[24] = "wallpaper25.jpg";
 
     var famousQuotes = {
         "quotes": [
