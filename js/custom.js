@@ -103,13 +103,13 @@ var beautifulNewTab = (function beautifulNewTab() {
         timeElement.innerHTML = getCurrentTime();
     }, 1000);
 
-    
+
     // condition to check net connectivity
-    if(navigator.onLine == false){
+    if(!navigator.onLine){
         getRandomImage(arrayImg);
     }
     //fetch image
-    else{ 
+    else{
         fetch(IMAGE_API)
       .then(function (response) {
           return response;
@@ -119,17 +119,17 @@ var beautifulNewTab = (function beautifulNewTab() {
           imageElem.style.backgroundImage = "url(" + resp.url + ")";
       })
     }
-    
+
 
 
     chrome.storage.sync.get('location', function (data) {
         weatherLocation.value = data.location ? data.location : '';
-        if (weatherLocation.value && navigator.onLine == true) {
+        if (weatherLocation.value && navigator.onLine) {
             document.getElementById('loactor').style.display = "none";
             fetchWeather();
-        } else if(navigator.onLine == false){
+        } else if(!navigator.onLine){
             document.getElementById('loactor').style.display = "none";
-            document.getElementById('weatherContainer').innerHTML = "Please Connect to the Internet";
+            document.getElementById('weatherContainer').innerHTML = "<p class='noInternetWeather'>There is no Internet connection. Please try again later!</p>";
         } else {
             document.getElementById('weatherContainer').style.display = "none";
             document.getElementById('loactor').style.display = "block";
@@ -240,16 +240,21 @@ var beautifulNewTab = (function beautifulNewTab() {
         });
     }
 
-    function fetchQuotes() {
-        QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + radioQuote;
-        fetch(QUOTES_API, init)
-          .then(function (response) {
-              return response.json();
-          })
-          .then(function (resp) {
-              var quoteElm = document.querySelector('.quote');
-              quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quote + "</p> <span class='rightQuote'></span><br> - " + resp.author;
-          })
+    if(!navigator.onLine){
+      generateRandomQuote(quotesObj);
+    }
+    else {
+      function fetchQuotes() {
+          QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + radioQuote;
+          fetch(QUOTES_API, init)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (resp) {
+                var quoteElm = document.querySelector('.quote');
+                quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quote + "</p> <span class='rightQuote'></span><br> - " + resp.author;
+            })
+      }
     }
 
     function displayNote() {
@@ -282,8 +287,8 @@ var beautifulNewTab = (function beautifulNewTab() {
 
     function generateRandomQuote(quotesObj) {
         var num = Math.floor(Math.random() * quotesObj.quotes.length);
-        console.log(quotesObj.quotes[num].author);
-        console.log(quotesObj.quotes[num].quote);
+        var quoteElm = document.querySelector('.quote');
+        quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + quotesObj.quotes[num].quote + "</p> <span class='rightQuote'></span><br> - " + quotesObj.quotes[num].author;
     }
 
 })();

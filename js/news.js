@@ -1,23 +1,28 @@
 var NEWS_API = "https://newsapi.org/v2/top-headlines?country=us&apiKey=38f90da811ac4deb8486698e997fe0c6"
 
 // fetch News
-var req = new Request(NEWS_API);
-fetch(req)
-  .then(data => data.json())
-  .then(data => {
-    //console.log(data);
-    var newsElem = document.querySelector('.news');
-    for (var i = 0; i < 15; i += 3) {
-      if (data.articles[i].urlToImage != null) {
-        newsElem.innerHTML = newsElem.innerHTML +
-          "<div class=\"flexcolumn\" >" +
-          getCard(data.articles[i]) +
-          getCard(data.articles[i + 1]) +
-          getCard(data.articles[i + 2])  +
-          "</div>";
+if(!navigator.onLine){
+  var newsElem = document.querySelector('.newsContainer');
+  newsElem.innerHTML = "<h1 class='noInternetNews'>There is no Internet connection. Please try again later!</h1>";
+}else {
+  var req = new Request(NEWS_API);
+  fetch(req)
+    .then(data => data.json())
+    .then(data => {
+      //console.log(data);
+      var newsElem = document.querySelector('.news');
+      for (var i = 0; i < 15; i += 3) {
+        if (data.articles[i].urlToImage != null) {
+          newsElem.innerHTML = newsElem.innerHTML +
+            "<div class=\"flexcolumn\" >" +
+            getCard(data.articles[i]) +
+            getCard(data.articles[i + 1]) +
+            getCard(data.articles[i + 2])  +
+            "</div>";
+        }
       }
-    }
-  })
+    })
+}
 
   function getCard(article){
     var author, imgUrl, desc, domCard;
@@ -53,7 +58,7 @@ fetch(req)
       "<img src=" + imgUrl + ">" +
       "<div class=\"title\"><a href=" + article.url + "><span style=\"font-size:calc(12px+2vh)\">" + article.title + "</span></a></div>" +
       "<div class=\"newsDesc\"><p>" + desc + " </p><span>" + article.publishedAt.substring(0,10)+
-      //"<br/>"+ article.publishedAt.substring(11,19) + 
+      //"<br/>"+ article.publishedAt.substring(11,19) +
       "</span></div>" +
       "<div class=\"author\"><p>" + author + "</p></div>" +
     "</div>";
