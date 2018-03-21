@@ -103,8 +103,14 @@ var beautifulNewTab = (function beautifulNewTab() {
         timeElement.innerHTML = getCurrentTime();
     }, 1000);
 
+    
+    // condition to check net connectivity
+    if(navigator.onLine == false){
+        getRandomImage(arrayImg);
+    }
     //fetch image
-    fetch(IMAGE_API)
+    else{ 
+        fetch(IMAGE_API)
       .then(function (response) {
           return response;
       })
@@ -112,13 +118,18 @@ var beautifulNewTab = (function beautifulNewTab() {
           var imageElem = document.querySelector('.contentContainer');
           imageElem.style.backgroundImage = "url(" + resp.url + ")";
       })
+    }
+    
 
 
     chrome.storage.sync.get('location', function (data) {
         weatherLocation.value = data.location ? data.location : '';
-        if (weatherLocation.value) {
+        if (weatherLocation.value && navigator.onLine == true) {
             document.getElementById('loactor').style.display = "none";
             fetchWeather();
+        } else if(navigator.onLine == false){
+            document.getElementById('loactor').style.display = "none";
+            document.getElementById('weatherContainer').innerHTML = "Please Connect to the Internet";
         } else {
             document.getElementById('weatherContainer').style.display = "none";
             document.getElementById('loactor').style.display = "block";
