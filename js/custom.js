@@ -241,7 +241,11 @@ var beautifulNewTab = (function beautifulNewTab() {
     }
 
     function fetchQuotes() {
-        QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + radioQuote;
+        if(navigator.onLine == false){
+            generateRandomQuote(quotesObj);
+        }
+        else{
+            QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + radioQuote;
         fetch(QUOTES_API, init)
           .then(function (response) {
               return response.json();
@@ -250,6 +254,7 @@ var beautifulNewTab = (function beautifulNewTab() {
               var quoteElm = document.querySelector('.quote');
               quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quote + "</p> <span class='rightQuote'></span><br> - " + resp.author;
           })
+        }
     }
 
     function displayNote() {
@@ -282,8 +287,8 @@ var beautifulNewTab = (function beautifulNewTab() {
 
     function generateRandomQuote(quotesObj) {
         var num = Math.floor(Math.random() * quotesObj.quotes.length);
-        console.log(quotesObj.quotes[num].author);
-        console.log(quotesObj.quotes[num].quote);
+        var quoteElm = document.querySelector('.quote');
+        quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + quotesObj.quotes[num].quote + "</p> <span class='rightQuote'></span><br> - " + quotesObj.quotes[num].author;
     }
 
 })();
