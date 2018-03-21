@@ -240,21 +240,21 @@ var beautifulNewTab = (function beautifulNewTab() {
         });
     }
 
-    if(!navigator.onLine){
-      generateRandomQuote(quotesObj);
-    }
-    else {
-      function fetchQuotes() {
-          QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + radioQuote;
-          fetch(QUOTES_API, init)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (resp) {
-                var quoteElm = document.querySelector('.quote');
-                quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quote + "</p> <span class='rightQuote'></span><br> - " + resp.author;
-            })
-      }
+    function fetchQuotes() {
+        if(navigator.onLine == false){
+            generateRandomQuote(quotesObj);
+        }
+        else{
+            QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + radioQuote;
+        fetch(QUOTES_API, init)
+          .then(function (response) {
+              return response.json();
+          })
+          .then(function (resp) {
+              var quoteElm = document.querySelector('.quote');
+              quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quote + "</p> <span class='rightQuote'></span><br> - " + resp.author;
+          })
+        }
     }
 
     function displayNote() {
