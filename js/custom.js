@@ -36,7 +36,7 @@ var beautifulNewTab = (function beautifulNewTab() {
     arrayImg[8] = "wallpaper9.jpg";
     arrayImg[9] = "wallpaper10.jpg";
 
-    var quotesObj = {
+    var famousQuotes = {
         "quotes": [
               { "author": "Carol Burnett", "quote": "Only I can change my life. No one can do it for me." },
               { "author": "Charles R. Swindoll", "quote": "Life is 10% what happens to you and 90% how you react to it." },
@@ -54,6 +54,27 @@ var beautifulNewTab = (function beautifulNewTab() {
               { "author": "Sam Levenson", "quote": "Don't watch the clock; do what it does. Keep going." },
               { "author": "Winston Churchill", "quote": "If you're going through hell, keep going." },
               { "author": "Maya Angelou", "quote": "We may encounter many defeats but we must not be defeated." }
+        ]
+    };
+
+    var moviesQuotes = {
+        "quotes": [
+              { "author": "Love Story", "quote": "Love means never having to say you're sorry." },
+              { "author": "Casablanca", "quote": "Of all the gin joints in all the towns in all the world, she walks into mine." },
+              { "author": "The Godfather", "quote": "I'm going to make him an offer he can't refuse." },
+              { "author": "Star Warsn", "quote": "May the Force be with you." },
+              { "author": "Jaws", "quote": "You're gonna need a bigger boat." },
+              { "author": "Gone With the Wind", "quote": "The first rule of Fight Club is: You do not talk about Fight Club." },
+              { "author": "Fight Club", "quote": "If you can dream it, you can do it." },
+              { "author": "The Dark Knight", "quote": "Why so serious?" },
+              { "author": "When Harry Met Sally", "quote": "I'll have what she's having." },
+              { "author": "Dr. No", "quote": "Bond. James Bond." },
+              { "author": "The Sixth Sense", "quote": "I see dead people." },
+              { "author": "The Terminator", "quote": "I'll be back." },
+              { "author": "A Few Good Men", "quote": "You can't handle the truth!" },
+              { "author": "Toy Story", "quote": "To infinity and beyond!" },
+              { "author": "Dead Poets Society", "quote": "Carpe diem. Seize the day, boys." },
+              { "author": "The Usual Suspects", "quote": "The greatest trick the devil ever pulled was convincing the world he didn't exist." }
         ]
     };
 
@@ -241,8 +262,13 @@ var beautifulNewTab = (function beautifulNewTab() {
     }
 
     function fetchQuotes() {
-        if(navigator.onLine == false){
-            generateRandomQuote(quotesObj);
+        if(!navigator.onLine){
+            if(radioQuote == 'famous'){
+                generateRandomQuote(famousQuotes);
+            }
+            else{
+                generateRandomQuote(moviesQuotes);
+            }    
         }
         else{
             QUOTES_API = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=" + radioQuote;
@@ -285,10 +311,10 @@ var beautifulNewTab = (function beautifulNewTab() {
 
     //generateRandomQuote(quotesObj);
 
-    function generateRandomQuote(quotesObj) {
-        var num = Math.floor(Math.random() * quotesObj.quotes.length);
+    function generateRandomQuote(randomQuotes) {
+        var num = Math.floor(Math.random() * randomQuotes.quotes.length);
         var quoteElm = document.querySelector('.quote');
-        quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + quotesObj.quotes[num].quote + "</p> <span class='rightQuote'></span><br> - " + quotesObj.quotes[num].author;
+        quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + randomQuotes.quotes[num].quote + "</p> <span class='rightQuote'></span><br> - " + randomQuotes.quotes[num].author;
     }
 
 })();
