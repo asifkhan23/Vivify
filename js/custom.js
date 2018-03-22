@@ -1,7 +1,8 @@
 var beautifulNewTab = (function beautifulNewTab() {
 
     var QUOTES_API_OLD = "https://andruxnet-random-famous-quotes.p.mashape.com/?cat=famous";
-    var IMAGE_API = "https://source.unsplash.com/random";
+    //var IMAGE_API = "https://source.unsplash.com/random";
+    var IMAGE_API = "https://picsum.photos/1080/720/?random";
     var WEATHER_API_OLD = "http://api.openweathermap.org/data/2.5/weather?q=dubai&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657"
 
     var myHeaders = new Headers({
@@ -58,7 +59,6 @@ var beautifulNewTab = (function beautifulNewTab() {
                 'toggleSocialValue': true
             }, function () {
                 location.reload();
-                console.log("Initialization complete, Ready to use.");
             });
         }
     });
