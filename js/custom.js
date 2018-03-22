@@ -29,7 +29,7 @@ var beautifulNewTab = (function beautifulNewTab() {
     document.getElementById("saveLocation").addEventListener("click", fetchWeather);
     document.getElementsByName("radioQuote")[0].addEventListener("click", setQuoteTypeFamous);
     document.getElementsByName("radioQuote")[1].addEventListener("click", setQuoteTypeMovies);
-
+    document.getElementById("hideSettings").addEventListener("click", resetSettings);
     //On install initialization
     //chrome.runtime.onInstalled.addListener(function () {
     //    chrome.storage.sync.set({
@@ -112,7 +112,12 @@ var beautifulNewTab = (function beautifulNewTab() {
         fetchQuotes();
     });
 
-
+    function resetSettings(){
+        chrome.storage.sync.get('location', function (data) {
+            weatherLocation.value = data.location ? data.location : '';
+        });
+        document.getElementById('locElements').style.border = "1px solid #eee";        
+    }
 
     function resetLocation() {
         chrome.storage.sync.get('location', function (data) {
