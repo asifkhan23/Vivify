@@ -79,7 +79,12 @@ var beautifulNewTab = (function beautifulNewTab() {
     else{
         fetch(IMAGE_API)
       .then(function (response) {
-          return response;
+          if(response != null){
+            return response;
+          }
+          else{
+            setTimeout(function(){ getRandomImage(arrayImg); }, 3000);
+          }
       })
       .then(function (resp) {
           var imageElem = document.querySelector('.contentContainer');
@@ -139,9 +144,16 @@ var beautifulNewTab = (function beautifulNewTab() {
     }
 
     function fetchWeather() {
+        
         document.getElementById('loadingDiv').style.display = "block";
         var weatherLocation = document.getElementById("location");
-        WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=" + weatherLocation.value + "&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657";
+        WEATHER_API = "http://api.openweathermap.org/data/2.5/weather?q=" + weatherLocation.value + "&units=metric&APPID=924d98f4507d35a3eafb93d90bec4657";   
+        // condition to check net connectivity
+        if(!navigator.onLine){
+            document.getElementById('locElements').style.border = "1px solid red";
+            weatherLocation.value = "No Internet connection";
+        }
+        else{
         fetch(WEATHER_API)
           .then(function (response) {
               return response.json();
@@ -158,6 +170,7 @@ var beautifulNewTab = (function beautifulNewTab() {
                   // document.getElementById('errMsg').innerHTML = "No such location found";
               }
           })
+        }
     }
 
     function putWeatherDetails(resp) {
