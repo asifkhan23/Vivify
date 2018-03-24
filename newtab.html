@@ -35,23 +35,30 @@
         <h2>Settings</h2>
       </div>
       <div class="modal-body">
-        <div class="settings">
+        <div class="activeButtons">
+          <div class="settingsBtn" id="toggleWeather">
+              <i class="icx material-icons">cloud_queue</i>
+              <p>Show weather</p>
+          </div>
+          <div class="settingsBtn" id="toggleQuote">
+              <i class="icx material-icons">format_quote</i>
+              <p>Show Quotes</p>
+          </div>
+          <div class="settingsBtn" id="toggleSocial">
+              <i class="icx material-icons">bubble_chart</i>
+              <p>Show Social icon</p>
+          </div>
+          <div class="settingsBtn" id="toggleNotes">
+              <i class="icx material-icons">assignment</i>
+              <p>Show Notes</p>
+          </div>
+        </div>
+        <!--<div class="settings">
           <p>Show Weather</p>
           <label class="switch">
             <input id="toggleWeather" type="checkbox" checked>
             <span class="slider round"></span>
           </label>
-        </div>
-        <div class="settings">
-          <p>Weather Location</p>
-          <div id="locElements">
-            <input type="text" placeholder="Enter your location" id="location" />
-            <div class="searchButtonDiv" style="display: inline-block;">
-              <div id="saveLocation">
-                <img src="../images/search.png" alt="Go">
-              </div>
-            </div>
-          </div>
         </div>
         <div class="settings">
           <p>Show Notes</p>
@@ -73,14 +80,27 @@
             <input id="toggleQuote" type="checkbox" checked>
             <span class="slider round"></span>
           </label>
+        </div>-->
+        <div id="wthLocInput" class="settings">
+          <p>Weather Location</p>
+          <div id="locElements">
+            <input type="text" placeholder="Enter your location" id="location" />
+            <div class="searchButtonDiv" style="display: inline-block;">
+              <div id="saveLocation">
+                <img src="../images/search.png" alt="Go">
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="settings">
+        <div id="qotCatSelect" class="settings">
           <p>Type of Quotes</p>
           <label class="radioContainer">
             Famous
             <input type="radio" checked="checked" name="radioQuote" value="famous">
             <span class="checkmark"></span>
           </label>
+          <br/>
+          <br/>
           <label class="radioContainer">
             Movies
             <input type="radio" name="radioQuote" value="movies">
