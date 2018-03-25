@@ -27,16 +27,19 @@ window.onclick = function(event) {
 //Settings Weather Toggle
 var weatherContainer = document.getElementById('weatherContainer');
 var toggleWeather = document.getElementById('toggleWeather');
+var setWthLocation = document.getElementById('wthLocInput');
 chrome.storage.sync.get('toggleWeatherValue', function(data) {
   var showWeather = data.toggleWeatherValue ? data.toggleWeatherValue : false;
   if (showWeather) {
     //toggleWeather.checked = true;
     toggleWeather.style.color = "#1181D1";
     weatherContainer.classList.remove("customHide");
+    setWthLocation.style.display = "block";
   } else {
     //toggleWeather.checked = false;
     toggleWeather.style.color = "#CCCCCC";    
     weatherContainer.classList.add("customHide");
+    setWthLocation.style.display = "none";
   }
 });
 
@@ -48,6 +51,7 @@ toggleWeather.addEventListener('click', function() {
     }, function() {
       weatherContainer.classList.remove("customHide");
       toggleWeather.style.color = "#1181D1"
+      setWthLocation.style.display = "block";
     });
   } 
   else {
@@ -56,6 +60,7 @@ toggleWeather.addEventListener('click', function() {
     }, function() {
       weatherContainer.classList.add("customHide");
       toggleWeather.style.color = "#CCCCCC";          
+      setWthLocation.style.display = "none";
     });
   }
 });
@@ -102,14 +107,17 @@ toggleNotes.addEventListener('click', function() {
 // Settings Quote Toggle
 var quoteContainer = document.getElementById('quoteContainer');
 var toggleQuote = document.getElementById('toggleQuote');
+var setQuoteType = document.getElementById('qotCatSelect');
 chrome.storage.sync.get('toggleQuoteValue', function(data) {
   var showQuote = data.toggleQuoteValue ? data.toggleQuoteValue : false;
   if (showQuote) {
     toggleQuote.style.color = "#1181D1";
     quoteContainer.classList.remove("customHide");
+    setQuoteType.style.display = "block";
   } else {
     toggleQuote.style.color = "#CCCCCC";
     quoteContainer.classList.add("customHide");
+    setQuoteType.style.display = "none";
   }
 });
 
@@ -120,6 +128,7 @@ toggleQuote.addEventListener('click', function() {
     }, function() {
       toggleQuote.style.color = "#1181D1";
       quoteContainer.classList.remove("customHide");
+      setQuoteType.style.display = "block";      
     });
   } else {
     chrome.storage.sync.set({
@@ -127,6 +136,7 @@ toggleQuote.addEventListener('click', function() {
     }, function() {
       toggleQuote.style.color = "#CCCCCC";      
       quoteContainer.classList.add("customHide");
+      setQuoteType.style.display = "none";
     });
   }
 });
@@ -139,9 +149,11 @@ chrome.storage.sync.get('toggleSocialValue', function(data) {
   if (showSocialIcons) {
     toggleSocial.style.color = "#1181D1";
     socialContainer.classList.remove("customHide");
+    setQuoteType.style.display = "block";    
   } else {
     toggleSocial.style.color = "#CCCCCC";
     socialContainer.classList.add("customHide");
+    setQuoteType.style.display = "none";    
   }
 });
 

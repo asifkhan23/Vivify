@@ -37,8 +37,10 @@
   -webkit-animation-duration: 0.4s;
   animation-name: slideIn;
   animation-duration: 0.4s;
-  height: 320px;
+  /* height: 320px; */
   border-radius: 20px;
+  height: fit-content;
+  padding-bottom: 10px;
 }
 
 /* The Close Button */
