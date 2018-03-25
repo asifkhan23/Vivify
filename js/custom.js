@@ -89,8 +89,10 @@ var beautifulNewTab = (function beautifulNewTab() {
       .then(function (resp) {
           var imageElem = document.querySelector('.contentContainer');
           imageElem.style.backgroundImage = "url(" + resp.url + ")";
+      }).catch(function(){
+        getRandomImage(arrayImg);
       })
-    }
+   }
 
 
 
@@ -159,17 +161,16 @@ var beautifulNewTab = (function beautifulNewTab() {
               return response.json();
           })
           .then(function (resp) {
-              if (resp.cod != 404) {
                   putWeatherDetails(resp);
                   setLocation(weatherLocation.value);
-              }
-              else {
-                  document.getElementById('locElements').style.border = "1px solid red";
-                  weatherLocation.value = "";
-                  // document.getElementById('loadingDiv').style.display = "none";
-                  // document.getElementById('errMsg').innerHTML = "No such location found";
-              }
+          }).catch(function(){
+            document.getElementById('locElements').style.border = "1px solid red";
+            weatherLocation.value = "Please Try again later";
+            document.getElementById('weatherContainer').innerHTML = "<p class='noInternetWeather'>Unable to fetch the data, Please try again later!</p>";
+            // document.getElementById('loadingDiv').style.display = "none";
+            // document.getElementById('errMsg').innerHTML = "No such location found";
           })
+                 
         }
     }
 
@@ -243,6 +244,18 @@ var beautifulNewTab = (function beautifulNewTab() {
           .then(function (resp) {
               var quoteElm = document.querySelector('.quote');
               quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quote + "</p> <span class='rightQuote'></span><br> - " + resp.author;
+          })
+          .fail(function() {
+            console.log("error");
+        })
+          .catch(function(){
+              alert("hello");
+            if(radioQuote == 'famous'){
+                generateRandomQuote(famousQuotes);
+            }
+            else{
+                generateRandomQuote(moviesQuotes);
+            }
           })
         }
     }

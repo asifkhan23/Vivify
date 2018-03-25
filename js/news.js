@@ -21,6 +21,9 @@ if(!navigator.onLine){
             "</div>";
         }
       }
+    }).catch(function(){
+      var newsElem = document.querySelector('.newsContainer');
+      newsElem.innerHTML = "<h1 class='noInternetNews'> Unable to fetch the results. Please refresh the page after sometime!</h1>";
     })
 }
 
