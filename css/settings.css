@@ -28,9 +28,9 @@
 
 .modal-content {
   position: fixed;
-  top: 25%;
-  left: 30%;
-  right: 30%;
+  top: 25vh;
+  left: 30vw;
+  right: 30vw;
   background-color: #fefefe;
   /* width: 100%; */
   -webkit-animation-name: slideIn;
@@ -40,6 +40,7 @@
   /* height: 320px; */
   border-radius: 20px;
   height: fit-content;
+  min-width: 250px;
   padding-bottom: 10px;
 }
 
@@ -119,11 +120,14 @@
 }
 
 .settings {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   padding-bottom: 10px;
   padding: 5px;
 }
 
-.settings p {
+.settings .subset {
   width: 50%;
   float: left;
   font-size: 13px;
@@ -136,10 +140,10 @@
 .radioContainer {
   /* display: block; */
   position: relative;
-  padding-left: 35px;
+  padding-left: 25px;
   margin-bottom: 12px;
   cursor: pointer;
-  font-size: 10px;
+  font-size: 15px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -160,8 +164,8 @@
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
+  height: 20px;
+  width: 20px;
   background-color: #eee;
   border-radius: 50%;
 }
@@ -195,8 +199,8 @@
 /* Style the indicator (dot/circle) */
 
 .radioContainer .checkmark:after {
-  top: 9px;
-  left: 9px;
+  top: 6px;
+  left: 6px;
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -216,7 +220,7 @@
 }
 
 .settingsBtn .icx{
-  font-size:48px;
+  font-size:4vw;
 }
 
 
