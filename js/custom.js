@@ -161,11 +161,15 @@ var beautifulNewTab = (function beautifulNewTab() {
               return response.json();
           })
           .then(function (resp) {
-                  putWeatherDetails(resp);
-                  setLocation(weatherLocation.value);
+            if(resp.cod == "404"){
+                document.getElementById('locElements').style.border = "1px solid red";
+                weatherLocation.value = "Please Try again later";
+            }
+            else{            
+                putWeatherDetails(resp);
+                setLocation(weatherLocation.value);
+            }
           }).catch(function(){
-            document.getElementById('locElements').style.border = "1px solid red";
-            weatherLocation.value = "Please Try again later";
             document.getElementById('weatherContainer').innerHTML = "<p class='noInternetWeather'>Unable to fetch the data, Please try again later!</p>";
             // document.getElementById('loadingDiv').style.display = "none";
             // document.getElementById('errMsg').innerHTML = "No such location found";
