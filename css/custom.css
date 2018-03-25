@@ -231,7 +231,7 @@ ul.social-icons {
   position: absolute;
   right: 0px;
   bottom: 0px;
-  z-index: 99999;
+  z-index: 9;
 }
 
 ul.social-icons li {
@@ -303,6 +303,7 @@ label[for=comment] {
   width: 18vw;
   height: 100%;
   right: 0px;
+  z-index: 10;
 }
 
 .zennable textarea {
