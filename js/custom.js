@@ -246,14 +246,20 @@ var beautifulNewTab = (function beautifulNewTab() {
               return response.json();
           })
           .then(function (resp) {
-              var quoteElm = document.querySelector('.quote');
+              if(resp.message == "Invalid API"){
+                if(radioQuote == 'famous'){
+                    generateRandomQuote(famousQuotes);
+                }
+                else{
+                    generateRandomQuote(moviesQuotes);
+                }
+              }
+              else{
+                var quoteElm = document.querySelector('.quote');
               quoteElm.innerHTML = "<span class='leftQuote'></span><p>" + resp.quote + "</p> <span class='rightQuote'></span><br> - " + resp.author;
+              }
           })
-          .fail(function() {
-            console.log("error");
-        })
           .catch(function(){
-              alert("hello");
             if(radioQuote == 'famous'){
                 generateRandomQuote(famousQuotes);
             }
