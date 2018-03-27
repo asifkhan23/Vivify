@@ -1,12 +1,12 @@
 # Vivify | Google Chrome New Tab Extension
 Transforms your new tabs to an inspiring beautiful place
-## Screen Shots
+# Screenshots
 ![alt text](https://raw.githubusercontent.com/23imak/Astronomy-Picture-of-the-Day/master/images/readme-1.jpg)
-#
+## News
 ![alt text](https://raw.githubusercontent.com/23imak/Astronomy-Picture-of-the-Day/master/images/readme-2.jpg)
-#
+## Notes
 ![alt text](https://raw.githubusercontent.com/23imak/Astronomy-Picture-of-the-Day/master/images/readme-3.jpg)
-#
+## Settings
 ![alt text](https://raw.githubusercontent.com/23imak/Astronomy-Picture-of-the-Day/master/images/readme-4.jpg)
 ## How to use
 > 1. Clone or download this repository.
