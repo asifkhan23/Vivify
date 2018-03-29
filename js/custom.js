@@ -153,7 +153,8 @@ var beautifulNewTab = (function beautifulNewTab() {
         // condition to check net connectivity
         if(!navigator.onLine){
             document.getElementById('locElements').style.border = "1px solid red";
-            weatherLocation.value = "No Internet connection";
+            weatherLocation.value = '';
+            weatherLocation.placeholder = "No Internet connection";
         }
         else{
         fetch(WEATHER_API)
@@ -161,9 +162,10 @@ var beautifulNewTab = (function beautifulNewTab() {
               return response.json();
           })
           .then(function (resp) {
-            if(resp.cod == "404"){
+            if(resp.cod == "404" || resp.cod == "400"){
                 document.getElementById('locElements').style.border = "1px solid red";
-                weatherLocation.value = "Please Try again later";
+                weatherLocation.value = '';
+                weatherLocation.placeholder="Please Try again later";
             }
             else{            
                 putWeatherDetails(resp);
