@@ -8,7 +8,7 @@
     "newtab": "newtab.html"
   },
   "permissions": [
-    "https://api.forismatic.com/", "storage", "topSites"
+    "https://api.forismatic.com/", "storage"
   ],
   "icons": { "16": "./images/icon16.png",
            "48": "./images/icon48.png",
