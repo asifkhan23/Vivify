@@ -165,7 +165,7 @@ var beautifulNewTab = (function beautifulNewTab() {
             if(resp.cod == "404" || resp.cod == "400"){
                 document.getElementById('locElements').style.border = "1px solid red";
                 weatherLocation.value = '';
-                weatherLocation.placeholder="Please Try again later";
+                weatherLocation.placeholder="City not found!";
             }
             else{            
                 putWeatherDetails(resp);
