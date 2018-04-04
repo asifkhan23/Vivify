@@ -50,7 +50,7 @@ var beautifulNewTab = (function beautifulNewTab() {
         if (data.quoteType === undefined) {
             chrome.storage.sync.set({
                 'location': "Delhi",
-                'quoteType': "movies",
+                'quoteType': "famous",
                 'noteText': "",
                 'headText': "",
                 'toggleWeatherValue': true,
